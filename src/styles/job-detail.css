@@ -1,0 +1,46 @@
+
+.job-detail-container{
+    border: solid #d4d2d0 1.5px;
+    margin-top: 80px;
+    padding: 20px;
+}
+.job-detail-container .job-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.job-detail-container .company-card{
+    display: flex;
+    align-items: center;
+}
+.job-detail-container .company-card .location{
+    border-left: solid #d4d2d0 1px;
+    margin-left: 4px;
+    font-size: .9rem;
+    padding: 0 4px;
+
+}
+.job-detail-container .apply-wrapper{
+    display: flex;
+    align-items: center;
+}
+.job-detail-container .apply-wrapper a{
+    background-color: #282828;
+    color: white;
+    padding: 9px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.job-detail-container .apply-wrapper .saved{
+    margin: 0 16px;
+    cursor: pointer;
+    background-color: #d4d2d0;
+    padding: 9px 18px;
+    border-radius: 7px;
+}
+.job-detail-container .apply-wrapper .report{
+   
+    cursor: pointer;
+    background-color: #d4d2d0;
+    padding: 9px 18px;
+    border-radius: 7px;
+}

@@ -1,0 +1,34 @@
+
+.profile-wrapper{
+   
+    background-color:transparent;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.profile-wrapper .profile-container{
+    border:solid gainsboro 1px;
+    width: 90%;
+    padding: 20px;
+}
+
+.profile-wrapper .profile-container i{
+    color: rgb(37, 87, 167);
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+.profile-wrapper .profile-container span{
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: black;
+}
+.profile-wrapper .profile-tab .title{
+    font-size: .95rem;
+    font-weight: 700;
+    margin: 2px 0;
+}
+.profile-wrapper .profile-tab{
+    border-bottom: solid gainsboro 1px;
+    padding: 10px;
+}

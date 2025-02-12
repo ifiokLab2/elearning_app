@@ -1,0 +1,266 @@
+.employer-organizations{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.annouce-tab{
+    display: flex;
+    align-items: center;
+}
+.progress-tab{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.organization-form{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+   
+}
+#organization-form-edit{
+    position: unset;
+    top: unset;
+    width: 100%;
+    right: unset;
+    left: unset;
+    bottom: unset;
+    z-index: 2000;
+    background-color: unset;
+    display: block;
+
+}
+.organization-form.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form.show-member{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form.remove-member{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form.suspend-member{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form.timesheet-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form .form-wrapper{
+    width: 400px;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+}
+
+
+.organization-form .form-wrapper .form-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.organization-form .form-wrapper .form-header .title{
+    font-size: .8rem;
+    font-weight: 800;
+    text-align: center;
+}
+.organization-form .form-wrapper .form-header .icon{
+    font-size: .7rem;
+    font-weight: 800;
+    position: absolute;
+    right: 0;
+}
+
+.organization-form .form-wrapper .logo-wrapper #logo-label{
+    margin-bottom: 5px !important;
+    top: unset;
+    left: unset;
+    position: unset;
+    font-size: .8rem;
+}
+.organization-form .form-wrapper .logo-wrapper input{
+    padding: 5px;
+    margin-top: 5px;
+}
+.organization-form .btn-wrapper{
+    margin-top: 30px;
+}
+.organization-form .btn-wrapper-timesheet{
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.organization-form .btn-wrapper-timesheet button:hover{
+    background-color: #2196F3;
+}
+.organization-form .btn-wrapper button{
+    background-color: #03192e;
+}
+.organization-form .btn-wrapper button:hover{
+    background-color: #2196F3;
+}
+.organization-form .icon i{
+    font-size: 1.2rem;
+}
+.annouce-tab span{
+    background-color: #282828;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 15px;
+}
+.employer-organizations .org{
+    font-size: 1rem;
+    font-weight: 900;
+}
+.employer-organizations .create-btn{
+   background-color: #2196F3;
+   color: white;
+   padding: 9px 20px;
+   font-size: .85rem;
+   cursor: pointer;
+}
+
+
+#apps-container-message-list{
+    display: block;
+}
+#apps-container-message-list .initials{
+    height: 40px;
+    width: 40px;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    border-radius: 40px;
+}
+ .apps-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+   
+    grid-auto-rows: auto;
+    gap: 1.0rem;
+    margin-top: 20px;
+   
+}
+ .apps-container .cards{
+    text-decoration: none;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    padding: 8px 20px;   
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    color: #282828;
+}
+ .apps-container .cards .icon{
+    margin-right: 6px;
+}
+
+ .apps-container .cards .title-header{
+    font-size: .8rem;
+    font-weight: 800;
+    margin-bottom: 3px;
+    
+   
+}
+
+
+.apps-container .organization-card .option-modal{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 0;
+    background-color: white;
+    top: 25px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.apps-container .organization-card .option-modal .option-card{
+    font-size: .8rem;
+    padding: 4px;
+    cursor: pointer;
+}
+.apps-container .organization-card .option-modal .option-card:hover{
+    font-size: .8rem;
+    background-color: gainsboro;
+}
+ .apps-container .cards .text-wrapper{
+    width: 100%;
+}
+ .apps-container .cards p{
+    font-size: .65rem;
+    padding: 1px;
+    margin: 0;
+   
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+}
+ .apps-container .cards .e-icon i{
+    color: #007FFF;
+}
+ .apps-container .cards .p-icon i{
+    color: #66FF00;
+}
+ .apps-container .cards .hrms-icon i{
+    color: #00308F;
+}
+ .apps-container .cards .pay-icon i{
+    color: #FEBE10;
+}
+ .apps-container .cards .time-icon i{
+    color:#970203;
+
+}
+.apps-container .organization-card{
+    justify-content: unset;
+    position: relative;
+}
+ .apps-container .organization-card .chevron-card{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+   
+}
+ .apps-container .organization-card .chevron-card i{
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 5px;
+}
+.previous{
+    font-size: .7rem;
+}
+ .apps-container .cards img{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+

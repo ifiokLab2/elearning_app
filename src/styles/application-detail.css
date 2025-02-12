@@ -1,0 +1,38 @@
+.application-details {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.application-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    background: #f9f9f9;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+p {
+    margin: 8px 0;
+}
+
+.cover-letter {
+    font-style: italic;
+    background: #f4f4f4;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.loader {
+    font-size: 18px;
+    color: #007bff;
+}

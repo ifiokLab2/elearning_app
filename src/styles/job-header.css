@@ -1,0 +1,142 @@
+.header-job{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #282828;
+    color: white;
+    position:fixed;
+    z-index: 1000;
+    top: 0;right: 0;left: 0;
+    box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+    
+}
+.header-job .header-box-a {
+    display: flex;
+    align-items: center;
+}
+.header-job .header-box-a a{
+    color: white;
+    margin-right: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.header-job .header-box-a a:hover{
+    color: lightblue;
+    
+}
+.header-job .header-box-a .logo{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.header-job .header-box-a .job-link,.header-job .header-box-a .courses-link{
+    font-size: 1rem;
+}
+
+.header-job .header-box-b{
+    display: flex;
+}
+
+.header-job .header-box-b{
+    display: flex;
+    align-items: center;
+}
+
+.header-job .header-box-b .profile-tab{
+    margin: 0 10px;
+    font-size: 1rem;
+}
+.header-job .header-box-b .job-link{
+    color: white;
+    padding: 10px 20px;
+    font-size: .9rem;
+    border: solid 1px white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px;
+    font-weight: 600;
+
+}
+.header-job .header-box-b .login-link{
+    color: #282828;
+    padding: 10px 20px;
+    font-size: .9rem;
+    font-weight: 600;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px;
+
+}
+.header-job .header-box-a .menu-btn{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.header-job .profile-tab{
+    position: relative;
+}
+.header-job .profile-container{
+   padding: 10px 0;
+    position: absolute;
+    left: -170px;
+    top: 30px;
+   background-color: white;
+   display: none;
+   box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+}
+.header-job .profile-container.show{
+    display: flex;
+   flex-direction: column;
+}
+.header-job .profile-container .user-email{
+    font-weight: 600;
+    color: #282828;
+    padding: 5px 15px;
+    margin: 6px 0;
+}
+.header-job .profile-container .profile-tabs{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #282828;
+    font-size: 1rem;
+    padding: 5px 15px;
+}
+.header-job .profile-container .profile-tabs:hover{
+    cursor: pointer;
+    background-color:lightgray;
+}
+.header-job .profile-container .profile-tabs i{
+    margin-right: 8px;
+}
+
+.header-job .menu-btn{
+    display: none;
+    
+}
+
+@media screen and (max-width:799px){
+    .header-job .header-box-a .job-link,.header-job .header-box-a .courses-link{
+        display: none;
+    }
+    .header-job .header-box-b .job-link,.header-job .header-box-b .login-link{
+        display: none;
+    }
+    .header-job .menu-btn{
+        display: block;
+    }
+}
+@media screen and (max-width:599px){
+   
+    .header-job .profile-container{
+        position: fixed;
+        left: 0px;
+        right: 0;
+        top: 50px;
+       
+        
+     }
+}
+

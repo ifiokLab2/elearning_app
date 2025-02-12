@@ -1,0 +1,49 @@
+
+.organization-header{
+    padding: 15px 10px;
+    justify-content: space-between;
+    display: flex;
+    box-shadow: 0 10px 10px -4px rgb(0 0 0 / 12%);
+    align-self: flex-start;
+    position: fixed;
+    left: 200px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.organization-header .box-a-wrapper{
+    display: flex;
+    align-items: center;
+}
+.organization-header .box-b-wrapper{
+    display: flex;
+}
+.organization-header .box-b-wrapper .card-box{
+    padding: 5px 10px;
+    text-decoration: none;
+    display: flex;  
+    color: #2d2f31;
+}
+.organization-header .box-b-wrapper .card-box:hover{
+    background-color: #d4d2d0;
+    border-radius: 6px;
+}
+
+.organization-header .box-a-wrapper .menu-btn{
+    margin-right: 6px;
+    padding: 3px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.organization-header .box-b-wrapper .card-box .icon{
+    margin-right: 5px;
+}
+
+@media screen and (max-width:992px) {
+    .organization-header{
+        left: 0;
+    }
+    
+}

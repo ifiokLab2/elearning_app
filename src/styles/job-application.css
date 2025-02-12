@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+.job-box-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+}
+
+.job-box-wrapper .div-label{
+    margin: 4px 0;
+}
+
+.job-box-wrapper .box-1{
+    flex: 2;
+    border: 1px solid rgb(212, 210, 208);
+    margin-right: 40px;
+    padding: 20px;
+   
+}
+
+.job-box-wrapper form .prev-btn{
+    background-color: #2d2f31;
+    color: white;
+    border: transparent;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.job-box-wrapper form .next-btn{
+    background: rgb(37, 87, 167);
+    color: white;
+    border: transparent;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+.job-box-wrapper .input-tab-box{
+    margin: 6px 0;
+}
+textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+textarea:focus{
+    border: solid black 1px;
+}
+.job-box-wrapper .box-2{
+    max-width: 400px;
+    align-self:flex-start;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(212, 210, 208);
+    padding: 20px;
+    
+}
+
+.job-box-wrapper .box-2 .company{
+    color: rgb(118, 118, 118);
+    font-size: .75rem;
+    border-bottom: 1px solid rgb(212, 210, 208);
+    padding-bottom: 4px;
+}
+
+.job-box-wrapper .box-2 .toggle-btn button{
+    color: rgb(37, 87, 167);
+    background-color: transparent;
+    padding: 4px;
+    border: transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1200px){
+    .job-box-wrapper{
+        flex-direction: column-reverse;
+    }
+    .job-box-wrapper .box-2{
+        max-width: unset;
+        align-self: stretch;
+        margin-bottom: 40px;
+    }
+    .job-box-wrapper .box-1{
+        max-width: unset;
+        align-self: stretch;
+       margin-right: 0;
+    }
+}

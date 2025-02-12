@@ -1,0 +1,135 @@
+.job-list-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  
+}
+.job-list-wrapper{
+    padding: 30px;
+}
+
+
+  
+.job-list-wrapper  thead {
+    background-color: #2d2f31;
+    color: white;
+}
+
+.job-list-wrapper th{
+    color: white;
+    font-size: .8rem;
+}
+.job-list-wrapper th{
+    color: white;
+    font-size: .8rem;
+}
+.job-list-wrapper td{
+    font-size: .8rem;
+}
+.job-list-wrapper td{
+    font-size: .8rem;
+}
+.job-list-wrapper th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.job-list-wrapper td{
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+.job-list-wrapper  tbody tr:hover {
+    background-color: #2196F3;
+    cursor: pointer;
+    color: white;
+}
+.job-list-wrapper tbody tr:hover{
+    background-color: #2196F3;
+    cursor: pointer;
+    color: white;
+}
+.job-list-wrapper  tbody tr:hover td{
+    color: white;
+}
+.job-list-wrapper tbody tr:hover td{
+    color: white;
+}
+
+.organization-form{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+   
+}
+.organization-form.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.organization-form .form-wrapper{
+    width: 400px;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+}
+
+
+.organization-form .form-wrapper .form-header-x{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.organization-form .form-wrapper .form-header-x .title{
+    font-size: .9rem;
+    font-weight: 800;
+    text-align: center;
+}
+.organization-form .form-wrapper .form-header-x .icon{
+    font-size: 1rem;
+    font-weight: 800;
+}
+.organization-form .form-wrapper .form-header-x .icon i:hover{
+    color: orangered;
+    cursor: pointer;
+}
+.organization-form .icon i{
+    font-size: 1.2rem;
+}
+
+.organization-form input,.organization-form textarea,.organization-form select {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+.organization-form select{
+    cursor: pointer;
+}
+  
+.organization-form label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+    background-color: white;
+    font-size: .85rem;
+}
+.organization-form .btn-wrapper{
+    margin-top: 30px;
+}
+.organization-form .btn-wrapper button{
+    background-color: #2d2f31;
+}
+.organization-form .btn-wrapper button:hover{
+    background-color: #2196F3;
+}
