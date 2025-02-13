@@ -574,6 +574,16 @@ const Header = ()=>{
                                     <div className = 'profile-card-container'>
                                         <Link to='/profile/' className='profile-link'>Profile</Link>
                                         <Link to='/profile/edit/' className='profile-link'>Edit profile</Link>
+                                        {user.user.is_company ? (
+                                             <Link to='/organization/dashboard/' className='profile-link'>Your organization</Link>
+                                        ):(
+                                            ""
+                                        )}
+                                        {user.user.is_employee ? (
+                                             <Link to='/organization/employee/repository/' className='profile-link'>Repository</Link>
+                                        ):(
+                                            ""
+                                        )}
                                         <div onClick={handleLogout} className='profile-link logout'>
                                             <i class="fa-solid fa-right-from-bracket"></i>
                                             Logout
