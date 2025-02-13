@@ -629,18 +629,19 @@ const Header = ()=>{
                 <div className='sidebar-wrapper'>
                     <div className = 'auth-tab' >
                        {user.user? (
-                        <>
-                            <div className='auth-wrapper'>
-                            <Link to='/login/'>Login</Link>
-                       </div>
-                       <div className='auth-wrapper'>
-                            <Link to='/signup/'>signup</Link>
-                       </div>
-                        </>
+                         <div onClick={handleLogout} className='auth-wrapper'>
+                         Logout
+                        </div>
                        ):(
-                        <div onClick={handleLogout} className='auth-wrapper'>
-                            Logout
-                       </div>
+                        <>
+                         <div className='auth-wrapper'>
+                                <Link to='/login/'>Login</Link>
+                        </div>
+                        <div className='auth-wrapper'>
+                                <Link to='/signup/'>signup</Link>
+                        </div>
+                            </>
+                       
                        
                        )}
                     </div>
