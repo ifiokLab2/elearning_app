@@ -107,7 +107,13 @@ const CourseEdit = ()=>{
                 // Handle failed course creation, e.g., show error messages to the user
             }
         } catch (error) {
-            console.error('An error occurred during course creation:', error);
+            setSnackbar({
+                open: true,
+                message: "Something went wrong!",
+                severity: "error",
+            });
+            
+            //console.error('An error occurred during course creation:', error);
             setTimeout(() => {
                 setIsLoading(isLoading);
                

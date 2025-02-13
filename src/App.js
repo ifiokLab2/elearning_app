@@ -71,12 +71,16 @@ import AcceptCompanyInvite from './pages/accept-company-invite';
 import EmployeeSignup from './pages/employee-signup';
 import EditOrganizationProfile from './pages/organization-profile-edit';
 import EmployeeList from './pages/employee-list';
+import ForgotPassword from './pages/forgot-password';
+import PasswordConfirm from './pages/password-confirm';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/password/reset/confirm/:uuid/:token/" element={<PasswordConfirm />} />
+      <Route path="/forgot-password/" element={<ForgotPassword />} />
       <Route path="organization/employee/list/" element={<EmployeeList  />} />
       <Route path="employee-signup/" element={<EmployeeSignup  />} />
       <Route path="join-company/:name/:token/" element={<AcceptCompanyInvite />} />
