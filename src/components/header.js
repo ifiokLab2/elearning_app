@@ -628,12 +628,21 @@ const Header = ()=>{
             <div className={`sideBar ${sidebarOpen ? 'show':''}`}>
                 <div className='sidebar-wrapper'>
                     <div className = 'auth-tab' >
-                       <div className='auth-wrapper'>
-                            <Link to=''>Login</Link>
+                       {user.user? (
+                        <>
+                            <div className='auth-wrapper'>
+                            <Link to='/login/'>Login</Link>
                        </div>
                        <div className='auth-wrapper'>
-                            <Link to=''>signup</Link>
+                            <Link to='/signup/'>signup</Link>
                        </div>
+                        </>
+                       ):(
+                        <div onClick={handleLogout} className='auth-wrapper'>
+                            Logout
+                       </div>
+                       
+                       )}
                     </div>
                     <div className='side-body'>
                         <div className='title'>Most Popular</div>
