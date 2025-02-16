@@ -29,7 +29,7 @@ const Search = ()=>{
         try {
           // Make a POST request to add the course to the cart
           const formData = new FormData();
-          const response = await axios.post(`http://localhost:8000/add-to-cart/${courseId}/`,formData,{
+          const response = await axios.post(`${apiUrl}/add-to-cart/${courseId}/`,formData,{
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': `Token ${user?.auth_token}`, // Include the user ID in the Authorization header
@@ -50,7 +50,7 @@ const Search = ()=>{
     };
     const fetchCartCourses = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/shopping-cart/',{
+          const response = await axios.get(`${apiUrl}/api/shopping-cart/`,{
             headers: {
                 Authorization: `Token ${user?.auth_token}`,
             },
@@ -71,7 +71,7 @@ const Search = ()=>{
 
     const fetchSearchResults = async (query) => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/search-courses/?query=${query}`);
+            const response = await axios.get(`${apiUrl}/api/search-courses/?query=${query}`);
             setResults(response.data.all_courses);
         } catch (error) {
             console.error('Error fetching search results:', error);
