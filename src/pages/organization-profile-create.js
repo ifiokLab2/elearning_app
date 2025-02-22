@@ -159,7 +159,7 @@ const CreateOrganizationProfile = ()=>{
         fetchCities();
        
         
-    }, [User, navigate]);
+    }, [User,country, navigate]);
     
   
 
