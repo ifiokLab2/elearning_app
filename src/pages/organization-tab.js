@@ -108,7 +108,7 @@ const OrganizationTab = ()=>{
                     <div className='job-section-wrapper'>
                         <Link to="/organization/sections/" className='job-card'>
                             <div className='box-a'>
-                            <img src={`${apiUrl}${company.logo}`} alt='logo' />
+                            <img src={company.logo} alt='logo' />
                             </div>
                             <div className='box-b'>
                             <div className='title' >
