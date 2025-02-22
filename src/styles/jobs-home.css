@@ -121,6 +121,10 @@
     font-size: .9rem;
     color: #282828;
     margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .job-list-wrapper .job-container .title:hover{
     text-decoration: underline;
