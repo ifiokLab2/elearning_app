@@ -346,12 +346,14 @@ const CreateJobs = ()=>{
                     <h2>Create a Job</h2>
                     {renderProgressBar()}
                     {renderStep()}
+                    <div className='btn-tab'>
                     {currentStep > 1 && <button type="button" onClick={prevStep} className = "prev-btn" >Previous</button>}
                     {currentStep < 4 && <button type="button" onClick={nextStep} className = "next-btn" >Next</button>}
                     {currentStep === 4 && <button type="submit" className = "next-btn">
                         Submit
                         {isLoading ? <div className="loader"></div> : '' }
                     </button>}
+                    </div>
                 </form>
                 </div>
            </div>

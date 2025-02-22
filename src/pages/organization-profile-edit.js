@@ -207,7 +207,7 @@ const EditOrganizationProfile = ()=>{
         fetchProfileData();
        
         
-    }, [User, navigate]);
+    }, [User,country, navigate]);
     
   
 
