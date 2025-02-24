@@ -198,7 +198,7 @@ const Home = ()=>{
                                             <i class="fa-solid fa-star-half"></i>
                                         </span>
                                         <span className='students box'>
-                                            (218,087)
+                                            {/*(218,087) */}
                                         </span>
                                     </div>
                                     <div className='price-card'>

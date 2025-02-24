@@ -648,421 +648,85 @@ const Header = ()=>{
                     <div className='side-body'>
                         <div className='title'>Most Popular</div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab1')}>
+                            <Link to='/search?query=Web Development' >
                                 <div className='text'>Web Development</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab1' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Web Development</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >JavaScript</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>ReactJs</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Angular</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>CSS</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>NodeJs</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>ASP.NET</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Redux Framework</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Typescript</Link>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div className='link-btn'>
-                            <Link to='' className='section' onClick={()=>toggleSubcategory('tab2')}>
+                            <Link to='/search?query=Game Development' className='section' >
                                 <div className='text'>Game Development</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab2' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Unreal Engine</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >Unity</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Game Development Fundamentals</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>C++ (Programming Language)</Link>
-                                </div>
-                                <div className='links-box'>
-                                <Link to =''>C# (Programming Language)</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Godot</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>3D Game Development</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>2D Game Development</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Unreal Engine Blueprints</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Blender</Link>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab3')}>
+                            <Link to='/search?query=Mobile Development'>
                                 <div className='text'>Mobile Development</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab3' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Google Flutter</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >IOS Development</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Android Development</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>React Native</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Dart (Programming Language)</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Swift</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>SwiftUI</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Kotlin</Link>
-                                </div>
-                                
-                            </div>
+                           
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab4')}>
+                            <Link to='/search?query=Game Development' >
                                 <div className='text'>Enterpreneurship</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab4' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business Fundamentals</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >Enterpreneurship Fundamentals</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Freelancing</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business Strategy</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Dart (Programming Language)</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>ChatGPT</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Startup</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Online Business</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business Plan</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Home Business</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Blogging</Link>
-                                </div>
-                                
-                            </div>
+                            
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab5')}>
+                            <Link to='/search?query=Business analytics & intelligence'>
                                 <div className='text'>Business analytics & intelligence</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab5' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Microsoft Power Bi</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >SQL</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Data modeling</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Data analytics</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business analysis</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Tableau</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business analytics</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Business intelligence</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Data analysis Expression(DAX)</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Excel</Link>
-                                </div>
-                                
-                                
-                            </div>
+                            
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab6')}>
+                            <Link to='/search?query=Finance' >
                                 <div className='text'>Finance</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab6' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Personal Finance</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >Finance Fundamentals</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Investment Banking</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Stock Trading</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Corporate Finance</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Banking</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Chartered Financial analyst</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Financial analysis</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Financial Management</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Payments</Link>
-                                </div>
-                                
-                                
-                            </div>
+                           
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab7')}>
+                            <Link to='/search?query=IT Certifications' >
                                 <div className='text'>IT Certifications</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab7' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>AWS Certified Cloud Practioner</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >AWS Certified Solution Architect</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>CompTIA A+</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Amazon AWS</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>CompTIA Security+</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Cisco Cert Network Associate(CCNA)</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>AWS Certified Developer Associate </Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Information Security</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Financial Management</Link>
-                                </div>
-                               
-                                
-                                
-                            </div>
+                           
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab7')}>
+                            <Link to='/search?query=Graphic design & illustration'>
                                 <div className='text'>Graphic design & illustration</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab7' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Graphic design</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >Adobe illustration</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Adobe Photoshop</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Canva</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Drawing</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Procreate digital illustration App</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Digital Painting </Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Design Theory</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Figma</Link>
-                                </div>
-                               
-                                
-                                
-                            </div>
+                           
                         </div>
                         <div className='link-btn'>
-                            <Link to='' onClick={()=>toggleSubcategory('tab8')}>
+                            <Link to='/search?query=Digital Marketing'>
                                 <div className='text'>Digital Marketing</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            <div className={`mobile-sub-category ${subCategory === 'tab8' ? 'show' : ''}`}>
-                                <div className='menu-tab' onClick={closeSubcategory}>
-                                    <div className='icon'>
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className='text'>Menu</div>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Digital Marketing</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to ='' >ChatGPT</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Social Media Marketing</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Marketing Strategy</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Startup</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Google analytics</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Copywritting </Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Internet Marketing</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Sales Funnels</Link>
-                                </div>
-                                <div className='links-box'>
-                                    <Link to =''>Youtube Marketing</Link>
-                                </div>
-                               
-                                
-                                
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
