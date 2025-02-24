@@ -80,7 +80,7 @@ const Cart = ()=>{
                    
                 {cart.map((course) =>(
                     <div key ={course.id} className='cart-card'>
-                        <img src={`${apiUrl}${course.thumbnail}`} alt = '' />
+                        <img src={course.thumbnail} alt = '' />
                         <div className='details-wrapper'>
                             <div className='title-wrapper'>
                                 <div className='title'> 

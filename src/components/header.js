@@ -198,43 +198,7 @@ const Header = ()=>{
                             </Link>
                             <div className='sub-category' >
                                 <div className='sub-category-section'>
-                                    <Link to='/search?query=>Accounting & Bookkeeping' className='link-tab'>
-                                        <div className='text'>Accounting & Bookkeeping</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Compliance</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Cryptocurrency & Blockchain</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Economics</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
+                                    <Link to='/search?query=Finance' className='link-tab'>
                                         <div className='text'>Finance</div>
                                         <div className='icon'>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -242,42 +206,7 @@ const Header = ()=>{
                                 
                                     </Link>
                                 </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Financial modeling & analysis</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Investing & trading</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Money Management tools</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Taxes</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
+                               
                             
                                 
                             </div>
@@ -292,7 +221,7 @@ const Header = ()=>{
                             </Link>
                             <div className='sub-category' >
                                 <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
+                                    <Link to='/search?query=Network & Security' className='link-tab'>
                                         <div className='text'>Network & Security</div>
                                         <div className='icon'>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -300,17 +229,9 @@ const Header = ()=>{
                                 
                                     </Link>
                                 </div>
+                              
                                 <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Hardware</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
+                                    <Link to='/search?query=Operating systems & Servers' className='link-tab'>
                                         <div className='text'>Operating systems & Servers</div>
                                         <div className='icon'>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -318,21 +239,13 @@ const Header = ()=>{
                                 
                                     </Link>
                                 </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Other IT & Softwares</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
                                 
-                                    </Link>
-                                </div>
                                 
                                 
                             </div>
                         </div>
                         <div className='category-section'>
-                            <Link to='' className='link-tab'>
+                            <Link to='/search?query=Business' className='link-tab'>
                                 <div className='text'>Business</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
@@ -340,98 +253,9 @@ const Header = ()=>{
                             
                             </Link>
                             <div className='sub-category' >
+                          
                                 <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Enterpreneurship</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Communication</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Management</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Sales</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Business Strategy</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Operations</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Project Management</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Software Engineering</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Business Law</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Business Law</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
+                                    <Link to='/search?query=Business' className='link-tab'>
                                         <div className='text'>Business analytics and intelligence</div>
                                         <div className='icon'>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -442,7 +266,7 @@ const Header = ()=>{
                             </div>
                         </div>
                         <div className='category-section'>
-                            <Link to='' className='link-tab'>
+                            <Link to='/search?query=Office Productivity' className='link-tab'>
                                 <div className='text'>Office Productivity</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
@@ -451,7 +275,7 @@ const Header = ()=>{
                             </Link>
                             <div className='sub-category' >
                                 <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
+                                    <Link to='/search?query=Office Productivity' className='link-tab'>
                                         <div className='text'>Excel</div>
                                         <div className='icon'>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -459,69 +283,7 @@ const Header = ()=>{
                                 
                                     </Link>
                                 </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Microsoft Office</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Excel VBA</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Microsoft Power Bi</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Google Sheets</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Google Drive</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Google Workspace</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
-                                <div className='sub-category-section'>
-                                    <Link to='' className='link-tab'>
-                                        <div className='text'>Power Point</div>
-                                        <div className='icon'>
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                
-                                    </Link>
-                                </div>
+                               
                                 
                                 
                             </div>
