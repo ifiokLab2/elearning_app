@@ -38,7 +38,7 @@ const CourseDetailPage = ()=>{
     };
     const fetchRequirements = async ()=>{
         try {
-            const response = await axios.get(`${apiUrl}/courses/${id}/add-objectives/`);
+            const response = await axios.get(`${apiUrl}/courses/${id}/add-requirements/`);
             setRequirements(response.data);
             setLoading(!loading);
         } catch (error) {
@@ -440,134 +440,8 @@ const CourseDetailPage = ()=>{
                 </div>
                 </div>
             </div>
-            <div className='author-container'>
-                <div className='wrapper'>
-                    <div className='profile-container'>
-                        <div className='caption'>Instructor</div>
-                        <img src={previewImage} alt = 'instructor' />
-                        <div className='author-details'>
-                            <div className='name'>Zaid Sabih</div>
-                            <div className='title'>
-                                Ethical Hacker, Computer Scientist & CEO of zSecurity
-                            </div>
-                            <div className='description'>
-                            My name is Zaid Al-Quraishi, I am a professional ethical hacker, computer scientist, and the founder and CEO of zSecurity & Bug-Bounty. I am passionate about utilising my skills to improve the security of organisations and individuals by identifying and resolving vulnerabilities in their systems.
-
-                            I have in-depth knowledge and experience in the fields of ethical hacking & cyber security, and I have helped over 1 million students worldwide on multiple teaching platforms to gain a better understanding of the subject.
-
-                            My companies, zSecurity & Bug-Bounty, specialise in providing ethical hacking services and managed bug-bounty programs to help organisations identify and remediate vulnerabilities in their systems.
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className='review-wrapper'>
-                <div className='wrapper'>
-                <Swiper
-                    spaceBetween={30}
-                    slidesPerView={2}
-                   
-                    autoplay={{ delay: 1200 }}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    >
-                    <SwiperSlide >
-                        <div className='cards'>
-                            <div className='box-1'>
-                                <div className='author-initials'>CP</div>
-                                <div className='details-wrapper'>
-                                    <div className='name'>
-                                        Chao-Hong P.
-                                    </div>
-                                    <div className='date'>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star-half"></i>
-                                        <span> 2 weeks ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='box-2'>
-                                It was an interesting and fulfilling course. Zaid is a great teacher and taught both Python coding and ethical hacking concepts really well. Past students had queries for problems I experienced and the TAs and some other
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide >
-                    <div className='cards'>
-                            <div className='box-1'>
-                                <div className='author-initials'>SJ</div>
-                                <div className='details-wrapper'>
-                                    <div className='name'>
-                                        Steve Joe.
-                                    </div>
-                                    <div className='date'>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star-half"></i>
-                                        <span> 2 weeks ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='box-2'>
-                                It was an interesting and fulfilling course. Zaid is a great teacher and taught both Python coding and ethical hacking concepts really well. Past students had queries for problems I experienced and the TAs and some other
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide >
-                    <div className='cards'>
-                            <div className='box-1'>
-                                <div className='author-initials'>JD</div>
-                                <div className='details-wrapper'>
-                                    <div className='name'>
-                                        John Doe.
-                                    </div>
-                                    <div className='date'>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star-half"></i>
-                                        <span> 2 weeks ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='box-2'>
-                                It was an interesting and fulfilling course. Zaid is a great teacher and taught both Python coding and ethical hacking concepts really well. Past students had queries for problems I experienced and the TAs and some other
-                            </div>
-                    </div>
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <div className='cards'>
-                                <div className='box-1'>
-                                    <div className='author-initials'>IU</div>
-                                    <div className='details-wrapper'>
-                                        <div className='name'>
-                                            Chao-Hong P.
-                                        </div>
-                                        <div className='date'>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star-half"></i>
-                                            <span> 2 weeks ago</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='box-2'>
-                                    It was an interesting and fulfilling course. Zaid is a great teacher and taught both Python coding and ethical hacking concepts really well. Past students had queries for problems I experienced and the TAs and some other
-                                </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-                   
-                </div>
-            </div>
+           
+           
             {showVideoModal && (
             <div className = 'preview-video-wrapper'>
                 <div className='preview-container'>
@@ -583,7 +457,7 @@ const CourseDetailPage = ()=>{
                     <div className='video-wrapper'>
                        
                         <video controls>
-                            <source src={`${apiUrl}${course.preview_video}`} type="video/mp4" />
+                            <source src={course.preview_video} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

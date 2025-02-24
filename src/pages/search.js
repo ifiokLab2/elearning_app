@@ -103,7 +103,7 @@ const Search = ()=>{
                         <div className='course-container'>
                             {results.map((course) => (
                                 <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
-                                    <img src ={`${apiUrl}${course.thumbnail}`} alt='' />
+                                    <img src ={course.thumbnail} alt='image' />
 
                                 
                                     <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}>
@@ -123,12 +123,12 @@ const Search = ()=>{
                                                 <i class="fa-solid fa-star-half"></i>
                                             </span>
                                             <span className='students box'>
-                                                (218,087)
+                                                
                                             </span>
                                         </div>
                                         <div className='price-card'>
                                         <span className='price'>${course.price}</span>
-                                        <span className='discount'>$17.6</span>
+                                        <span className='discount'>${course.discountPrice}</span>
                                         </div>
                                     </div>
                                 </Link>
