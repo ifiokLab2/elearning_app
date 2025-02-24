@@ -95,6 +95,7 @@
 .landing-page-container .container2 .preview-container .preview-course{
     position: absolute;
     top: 12rem;
+    color:#2d2f31;
     background-color: white;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
