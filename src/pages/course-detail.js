@@ -7,6 +7,7 @@ import 'swiper/swiper-bundle.css';
 import '../styles/course-detail.css';
 import previewImage from '../styles/hero1.jpg';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import apiUrl from '../components/api-url';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -272,7 +273,8 @@ const CourseDetailPage = ()=>{
    
 
     return(
-        <div className='page-wrapper'>
+       <>
+         <div className='page-wrapper'>
              <Header />
             <div className='landing-page-wrapper'>
                 {course && (
@@ -295,7 +297,7 @@ const CourseDetailPage = ()=>{
                              </div>
                          </div>
                          <div className='author-card'>
-                             <span className='name'>Created by Steve ben </span>
+                             <span className='name'>Created by {course.instructor} </span>
                          </div>
                      </div>
                      <div className='container2'>
@@ -465,6 +467,8 @@ const CourseDetailPage = ()=>{
             </div>
             )}
         </div>
+        <Footer />
+       </>
     );
 }
 
