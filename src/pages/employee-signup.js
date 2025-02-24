@@ -5,7 +5,7 @@ import axios from 'axios';
 import Header from '../components/header';
 import 'swiper/swiper-bundle.css';
 import '../styles/signup.css';
-
+import Footer from '../components/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
 import apiUrl from '../components/api-url';
@@ -107,7 +107,8 @@ const EmployeeSignup = ()=>{
         setConfirmPassword(event.target.value);
     };
     return(
-        <div className='page-wrapper'>
+       <>
+         <div className='page-wrapper'>
             <Header/>
             <div className='wrapper'>
                 <form className="form-container" onSubmit={handleSubmit}>
@@ -154,6 +155,8 @@ const EmployeeSignup = ()=>{
                 </form>
             </div>
         </div>
+        <Footer />
+       </>
     );
 };
 

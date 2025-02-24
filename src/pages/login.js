@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
 import apiUrl from '../components/api-url';
-
+import Footer from '../components/footer';
 
 
 const Login = ()=>{
@@ -79,7 +79,8 @@ const Login = ()=>{
     };
    
     return(
-        <div className='page-wrapper'>
+       <>
+         <div className='page-wrapper'>
             <Header/>
             <div className='wrapper'>
                 <form className="form-container" onSubmit={handleSubmit}>
@@ -112,6 +113,8 @@ const Login = ()=>{
                 </form>
             </div>
         </div>
+        <Footer />
+       </>
     );
 };
 
