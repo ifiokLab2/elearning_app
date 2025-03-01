@@ -69,7 +69,7 @@ const JobHeader = ()=>{
                         </Link>
                     </div>
                 </div>
-                {user.isLoggedIn ? (
+                {user? (
                     <Link to='/logout/' className='login-link'>
                     Logout
                 </Link>
