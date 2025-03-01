@@ -110,6 +110,7 @@
     overflow: hidden;
     -webkit-line-clamp: 2; /* Number of lines to show */
     white-space: normal; 
+    margin-top: 3px
 }
 .course-wrapper .course-container .card-details .author-name{
     color: #6a6f73;
