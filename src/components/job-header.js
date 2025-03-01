@@ -49,7 +49,7 @@ const JobHeader = ()=>{
                     <i className="fa-solid fa-user"></i>
                     <div className={`profile-container ${profile ? 'show' : ''}`}>
                         <div className='user-email'>
-                            {user.email}
+                            {/*{user.email} */}
                         </div>
                         <Link  to = '/organization/profile/' className='profile-tabs'>
                             <i class="fa-solid fa-address-card"></i>
