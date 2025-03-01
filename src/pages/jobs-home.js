@@ -115,7 +115,7 @@ const JobsHome = ()=>{
                         />
                     </div>
                     <div className='box-wrapper-c'>
-                        <button className='find-btn'>Find Jobs</button>
+                        <button className='find-btn' onClick={handleSearch}>Find Jobs</button>
                     </div>
                 </div>
             </div>
