@@ -105,10 +105,10 @@ const Home = ()=>{
         navigate(`/search?query=${searchQuery}`);
     };
     const slides = [
-      
-       hero1,
+
        hero2,
        hero3,
+       hero1,
         // Add more image URLs as needed
     ];
     return(
@@ -120,7 +120,7 @@ const Home = ()=>{
                     spaceBetween={30}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 500 }}
+                    autoplay={{ delay: 800 }}
                     modules={[Autoplay, Pagination, Navigation]}
                     >
                     {slides.map((slide, index) => (
