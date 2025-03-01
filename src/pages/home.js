@@ -11,6 +11,10 @@ import 'swiper/swiper-bundle.css';
 import '../styles/home.css';
 import logo from '../styles/logo.svg';
 import hero1 from '../styles/hero1.jpg';
+import hero2 from '../styles/hero-2.jpg';
+import hero3 from '../styles/hero-3.jpg';
+import hero4 from '../styles/hero-4.jpg';
+import hero6 from '../styles/';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/footer';
 
@@ -102,8 +106,10 @@ const Home = ()=>{
         navigate(`/search?query=${searchQuery}`);
     };
     const slides = [
-       logo,
+      
        hero1,
+       hero2,
+       hero3,
         // Add more image URLs as needed
     ];
     return(
