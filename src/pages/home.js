@@ -120,7 +120,7 @@ const Home = ()=>{
                     spaceBetween={30}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 800 }}
+                    autoplay={{ delay: 1200 }}
                     modules={[Autoplay, Pagination, Navigation]}
                     >
                     {slides.map((slide, index) => (
