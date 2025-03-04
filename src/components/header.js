@@ -17,12 +17,16 @@ const Header = ()=>{
     const user = useSelector((state) => state.user);
     const [searchQuery, setSearchQuery] = useState('');
     const [sidebarOpen,setsidebarOpen] = useState(false);
+    const [searchbarOpen,setsearchbarOpen] = useState(false);
     
     const [subCategory,setsubCategory] = useState('');
     const navigate = useNavigate()
     
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
+    }
+    const toggleSearchbar = ()=>{
+        setsearchbarOpen(!searchbarOpen);
     }
     const toggleSubcategory = (tab)=>{
         setsubCategory(tab);
@@ -36,10 +40,10 @@ const Header = ()=>{
         setSearchQuery(e.target.value);
        
     };
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-       
+        setsearchbarOpen(!searchbarOpen);
         navigate(`/search?query=${searchQuery}`);
     };
     const handleLogout = async () => {
@@ -381,7 +385,7 @@ const Header = ()=>{
                     <Link to='/cart/' className='cart'>
                         <i class="fa-solid fa-cart-shopping"></i>
                     </Link>
-                    <div className='search'>
+                    <div className='search' onClick={toggleSearchbar }>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                 </div>
@@ -493,7 +497,23 @@ const Header = ()=>{
                     </div>
                 </div>
                 <div className='close-btn' onClick={toggleSidebar}>
-                    <i class="fa-solid fa-x"></i>
+                    <i className="fa-solid fa-x"></i>
+                </div>
+            </div>
+            <div className = {`search-mobile-wrapper ${searchbarOpen ? 'show' : ''}`}>
+                <div className='search-mobile-container'>
+                    <form className='box-1' onSubmit={handleSubmit}> 
+                    <input 
+                        type='text'
+                        placeholder = 'Search for anything' 
+                        value={searchQuery}
+                        onChange={handleInputChange}
+                    />
+                     <i className="fa-solid fa-magnifying-glass"></i>
+                    </form>
+                    <div className='box-2' onClick={toggleSearchbar }>
+                        <i className="fa-solid fa-x"></i>
+                    </div>
                 </div>
             </div>
         </div>

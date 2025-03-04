@@ -108,7 +108,7 @@ const Home = ()=>{
 
        hero2,
        hero3,
-       hero1,
+       
         // Add more image URLs as needed
     ];
     return(
@@ -120,7 +120,7 @@ const Home = ()=>{
                     spaceBetween={30}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 1200 }}
+                    autoplay={{ delay: 2800 }}
                     modules={[Autoplay, Pagination, Navigation]}
                     >
                     {slides.map((slide, index) => (
