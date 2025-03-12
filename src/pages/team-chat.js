@@ -34,7 +34,8 @@ const TeamChat = () => {
   };
 
   const connectWebSocket = () => {
-    const socketUrl = `ws://localhost:8000/ws/teams/${Id}/chat/`;
+    //const socketUrl = `ws://localhost:8000/ws/teams/${Id}/chat/`;
+    const socketUrl = `wss://https//elearning-job-backend-a0ic.onrender.com/ws/teams/${Id}/chat/`;
     socketRef.current = new WebSocket(socketUrl);
 
     socketRef.current.onopen = () => {
