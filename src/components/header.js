@@ -14,7 +14,7 @@ import apiUrl from './api-url';
 
 const Header = ()=>{
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user.user);
     const [searchQuery, setSearchQuery] = useState('');
     const [sidebarOpen,setsidebarOpen] = useState(false);
     const [searchbarOpen,setsearchbarOpen] = useState(false);
@@ -329,23 +329,23 @@ const Header = ()=>{
                             </div>
                         </div>
                     </div>
-                    {user.user? ( 
+                    {user? ( 
                             <>
                                 <button onClick={handleLogout} className='login'>
                                     Logout 
                                 </button>
                                 <div className='user-icon-container'>
-                                    <div className='initial'>{user.user.first_name[0].toUpperCase()} {user.user.last_name[0].toUpperCase()}</div>
+                                    <div className='initial'>{user.first_name[0].toUpperCase()} {user.last_name[0].toUpperCase()}</div>
                                     <i className="fa-solid fa-circle dot"></i>
                                     <div className = 'profile-card-container'>
                                         <Link to='/profile/' className='profile-link'>Profile</Link>
                                         <Link to='/profile/edit/' className='profile-link'>Edit profile</Link>
-                                        {user.user.is_company ? (
+                                        {user.is_company ? (
                                              <Link to='/organization/dashboard/' className='profile-link'>Your organization</Link>
                                         ):(
                                             ""
                                         )}
-                                        {user.user.is_employee ? (
+                                        {user?.is_employee ? (
                                              <Link to='/organization/employee/repository/' className='profile-link'>Repository</Link>
                                         ):(
                                             ""
@@ -394,7 +394,7 @@ const Header = ()=>{
             <div className={`sideBar ${sidebarOpen ? 'show':''}`}>
                 <div className='sidebar-wrapper'>
                     <div className = 'auth-tab' >
-                       {user.user? (
+                       {user? (
                          <div onClick={handleLogout} className='auth-wrapper'>
                          Logout
                         </div>
@@ -416,7 +416,7 @@ const Header = ()=>{
                         <div className='auth-wrapper'>
                             <Link to='/jobs/'>Jobs</Link>
                         </div>
-                        {user.user.is_employee ? (
+                        {user.is_employee ? (
                             <div className='auth-wrapper'>
                                     <Link to='/organization/employee/repository'>Repository</Link>
                                 </div>

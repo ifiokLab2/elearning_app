@@ -101,9 +101,9 @@ const JobHeader = ()=>{
                     </div>
                 </div>
                 {user? (
-                    <Link to='/logout/' className='login-link'>
+                    <button onClick={handleLogout} className='login-link'>
                     Logout
-                </Link>
+                </button>
                 ):(
                     <Link to='/login/' className='login-link'>
                         Login{user?.first_name}
