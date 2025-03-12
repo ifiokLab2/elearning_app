@@ -140,7 +140,7 @@ const JobHeader = ()=>{
                         <div className='auth-wrapper'>
                             <Link to='/jobs/'>Jobs</Link>
                         </div>
-                        {user.is_employee ? (
+                        {user?.is_employee ? (
                             <div className='auth-wrapper'>
                                     <Link to='/organization/employee/repository'>Repository</Link>
                                 </div>
