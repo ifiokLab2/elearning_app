@@ -47,6 +47,12 @@ const Login = ()=>{
 
                 // Redirect to the home page
                 setTimeout(() => {
+                    if(response.data.user.isInstructor){
+                        navigate('/instructor/');
+                    }
+                    if(response.data.user.is_company){
+                        navigate('/organization/repository/');
+                    }
                     navigate('/'); // Change '/' to the actual path of your home page
                 }, 2000); // 2000 milliseconds (2 seconds) delay
             } else {

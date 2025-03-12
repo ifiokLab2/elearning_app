@@ -115,7 +115,10 @@ const JobsHome = ()=>{
                         />
                     </div>
                     <div className='box-wrapper-c'>
-                        <button className='find-btn' onClick={handleSearch}>Find Jobs</button>
+                        <button className='find-btn' onClick={handleSearch}>
+                            <span>Find Jobs</span>
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ const OrganizationHeader = ({ toggleSidebar })=>{
                 <div className='logo'>Logo</div>
             </div>
             <div className='box-b-wrapper'>
-               <Link to="" className='card-box'>
+               {/*<Link to="" className='card-box'>
                     <div className='icon'>
                         <i class="fa-solid fa-circle-question"></i>
                     </div>
@@ -42,7 +42,7 @@ const OrganizationHeader = ({ toggleSidebar })=>{
                         <i class="fa-solid fa-bell"></i>
                     </div>
                     <div className='text'>Notification</div>
-               </Link>
+               </Link> */}
                <Link to="/organization/profile/" className='card-box'>
                     <div className='icon'>
                         <i class="fa-solid fa-user"></i>

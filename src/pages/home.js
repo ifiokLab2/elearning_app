@@ -13,7 +13,8 @@ import logo from '../styles/logo.svg';
 import hero1 from '../styles/hero1.jpg';
 import hero2 from '../styles/hero-2.jpg';
 import hero3 from '../styles/hero-3.jpg';
-
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/footer';
 
@@ -21,7 +22,7 @@ const Home = ()=>{
     const [courses, setCourses] = useState([]);
     const user = useSelector((state) => state.user.user);
     const [searchQuery, setSearchQuery] = useState('');
-  
+    const [loading, setLoading] = useState(false);
    
     const [cart, setCart] = useState([]);
     const navigate = useNavigate();
@@ -79,6 +80,7 @@ const Home = ()=>{
     useEffect(() => {
         const fetchCourses = async () => {
             //console.log('user.auth_token:',user);
+            setLoading(true);
           try {
             const response = await axios.get(`${apiUrl}/api/courses/`,{
                 headers: {
@@ -87,8 +89,9 @@ const Home = ()=>{
             });
             
             setCourses(response.data.all_courses);
-           
+            setLoading(false);
           } catch (error) {
+            setLoading(true);
             console.error('Error fetching courses:', error);
           }
         };
@@ -173,46 +176,53 @@ const Home = ()=>{
                 </div>
                
                     <div className='course-container'>
-                        {courses.map((course) => (
-                            <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
-                                <img src ={course.thumbnail} alt='' />
+                        {loading ? (
+                            <Skeleton count={5} height={30} style={{ marginBottom: '10px' }} />
+                        ):(
+                            <>
+                                {courses.map((course) => (
+                                    <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
+                                        <img src ={course.thumbnail} alt='' />
 
-                                {course.is_enrolled ? (
-                                     <div className = 'heart-button enrolled'>enrolled</div>
-                                    )
-                                    :
-                                    (
-                                        <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}> 
-                                            {/* provide DRFview to check if the user is already enrolled in the course*/}
-                                            <i className={`${isInCart(course.id) ? 'fa-solid' : 'fa-regular' } fa-heart` } onClick={(e) => handleAddToCart(e,course.id)}></i>
+                                        {course.is_enrolled ? (
+                                            <div className = 'heart-button enrolled'>enrolled</div>
+                                            )
+                                            :
+                                            (
+                                                <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}> 
+                                                    {/* provide DRFview to check if the user is already enrolled in the course*/}
+                                                    <i className={`${isInCart(course.id) ? 'fa-solid' : 'fa-regular' } fa-heart` } onClick={(e) => handleAddToCart(e,course.id)}></i>
+                                                </div>
+                                            )
+                                        }
+                                        
+                                        
+                                        <div className='card-details'>
+                                            <h2>{course.title}</h2>
+                                            <div className='author-name'>{course.instructor}</div>
+                                            <div className='ratings-card'>
+                                                <span className='num box'>4.5</span>
+                                                <span className='stars box'>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star-half"></i>
+                                                </span>
+                                                <span className='students box'>
+                                                    {/*(218,087) */}
+                                                </span>
+                                            </div>
+                                            <div className='price-card'>
+                                            <span className='price'>${course.discountPrice}</span>
+                                            <span className='discount'>${course.price}</span>
+                                            </div>
                                         </div>
-                                    )
-                                }
-                                
-                                
-                                <div className='card-details'>
-                                    <h2>{course.title}</h2>
-                                    <div className='author-name'>{course.instructor}</div>
-                                    <div className='ratings-card'>
-                                        <span className='num box'>4.5</span>
-                                        <span className='stars box'>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star-half"></i>
-                                        </span>
-                                        <span className='students box'>
-                                            {/*(218,087) */}
-                                        </span>
-                                    </div>
-                                    <div className='price-card'>
-                                    <span className='price'>${course.discountPrice}</span>
-                                    <span className='discount'>${course.price}</span>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
+                                    </Link>
+                                ))}
+                            </>
+                        )}
+                        
                         
                     </div>
                   

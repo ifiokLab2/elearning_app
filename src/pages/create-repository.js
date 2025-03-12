@@ -128,7 +128,7 @@ const CreateRepository = ()=>{
                <form className="form-container" onSubmit={handleSubmit}  >
                     <div className='form-header'>
                         <i class="fa-solid fa-chalkboard-user"></i>
-                        <span>Create Team</span>
+                        <span>Create repository</span>
                         
                     </div>
                     <div className={`form-group ${name ? 'active' : ''}`}>

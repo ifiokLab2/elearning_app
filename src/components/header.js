@@ -410,90 +410,137 @@ const Header = ()=>{
                        
                        
                        )}
+                        <div className='auth-wrapper'>
+                            <Link to='/create-course/'>Create Course</Link>
+                        </div>
+                        <div className='auth-wrapper'>
+                            <Link to='/jobs/'>Jobs</Link>
+                        </div>
+                        {user.user.is_employee ? (
+                            <div className='auth-wrapper'>
+                                    <Link to='/organization/employee/repository'>Repository</Link>
+                                </div>
+                            ):(
+                                <div className='auth-wrapper'>
+                                    <Link to='/organization/repository/'>Repository</Link>
+                                </div>
+                         )}
+                       
                     </div>
                     <div className='side-body'>
                         <div className='title'>Most Popular</div>
                         <div className='link-btn'>
-                            <Link to='/search?query=Web Development' >
-                                <div className='text'>Web Development</div>
+                            <Link to='' onClick={()=>toggleSubcategory('tab1')}>
+                                <div className='text'>Development</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            
+                            <div className={`mobile-sub-category ${subCategory === 'tab1' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to='/search?query=Web Development' >Web Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to='/search?query=Mobile App Development' >Mobile App Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Data Science' >Data Science</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Programming Languages' >Programming Languagese</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Cyber Security' >Cyber Security</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Ethical hacking' >Ethical hacking</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Database Management System' >Database Management System</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Artificial Intelligence' >Artificial Intelligence</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Game Development' >Game Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Operating Systems & Servers' >Operating Systems & Servers</Link>
+                                </div>
+                            </div>
                         </div>
                         <div className='link-btn'>
-                            <Link to='/search?query=Game Development' className='section' >
-                                <div className='text'>Game Development</div>
+                            <Link to='' className='section' onClick={()=>toggleSubcategory('tab2')}>
+                                <div className='text'>Finance & Accounting</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            
+                            <div className={`mobile-sub-category ${subCategory === 'tab2' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Finance'>Finance</Link>
+                                </div>
+                              
+                               
+                                
+                            </div>
                         </div>
                         <div className='link-btn'>
-                            <Link to='/search?query=Mobile Development'>
-                                <div className='text'>Mobile Development</div>
+                            <Link to='' onClick={()=>toggleSubcategory('tab3')}>
+                                <div className='text'>IT Certification</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                           
+                            <div className={`mobile-sub-category ${subCategory === 'tab3' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Network & Security'>Network & Security</Link>
+                                </div>
+                                
+                                
+                            </div>
                         </div>
                         <div className='link-btn'>
-                            <Link to='/search?query=Game Development' >
-                                <div className='text'>Enterpreneurship</div>
+                            <Link to='' onClick={()=>toggleSubcategory('tab4')}>
+                                <div className='text'>Business</div>
                                 <div className='icon'>
                                     <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </Link>
-                            
-                        </div>
-                        <div className='link-btn'>
-                            <Link to='/search?query=Business analytics & intelligence'>
-                                <div className='text'>Business analytics & intelligence</div>
-                                <div className='icon'>
-                                    <i class="fa-solid fa-chevron-right"></i>
+                            <div className={`mobile-sub-category ${subCategory === 'tab4' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
                                 </div>
-                            </Link>
-                            
-                        </div>
-                        <div className='link-btn'>
-                            <Link to='/search?query=Finance' >
-                                <div className='text'>Finance</div>
-                                <div className='icon'>
-                                    <i class="fa-solid fa-chevron-right"></i>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Business Fundamentals'>Business Fundamentals</Link>
                                 </div>
-                            </Link>
-                           
+                               
+                               
+                                
+                            </div>
                         </div>
-                        <div className='link-btn'>
-                            <Link to='/search?query=IT Certifications' >
-                                <div className='text'>IT Certifications</div>
-                                <div className='icon'>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </Link>
-                           
-                        </div>
-                        <div className='link-btn'>
-                            <Link to='/search?query=Graphic design & illustration'>
-                                <div className='text'>Graphic design & illustration</div>
-                                <div className='icon'>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </Link>
-                           
-                        </div>
-                        <div className='link-btn'>
-                            <Link to='/search?query=Digital Marketing'>
-                                <div className='text'>Digital Marketing</div>
-                                <div className='icon'>
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </Link>
-                            
-                        </div>
+                       
                     </div>
                 </div>
                 <div className='close-btn' onClick={toggleSidebar}>

@@ -11,19 +11,50 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
+import apiUrl from './api-url';
+
 const JobHeader = ()=>{
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.user);
     const [sidebarOpen,setsidebarOpen] = useState(false);
     const [profile,setprofile] = useState(false);
-
+    const navigate = useNavigate();
+    const [subCategory,setsubCategory] = useState('');
     const toggleProfile = ()=>{
         setprofile(!profile);
     }
-
+    const toggleSubcategory = (tab)=>{
+        setsubCategory(tab);
+        console.log(subCategory);
+    }
+    const closeSubcategory = ()=>{
+        console.log(subCategory);
+        setsubCategory('');
+    }
     const toggleSidebar = ()=>{
         setsidebarOpen(!sidebarOpen);
     }
+    const handleLogout = async () => {
+        try {
+          // Make a POST request to the logout endpoint
+          const response = await axios.post(`${apiUrl}/logout/`);
+    
+          if (response.data.success) {
+            // Clear the user data in Redux store
+            dispatch(setUser(null));
+            navigate('/logout');
+    
+            // Optionally, you may want to redirect the user to the login page
+            // history.push('/login');
+          } else {
+            console.error('Logout failed:', response.data.message);
+            // Handle failed logout, e.g., show an error message to the user
+          }
+        } catch (error) {
+          console.error('An error occurred during logout:', error);
+          // Handle unexpected errors
+        }
+    };
    
 
     return(
@@ -86,51 +117,156 @@ const JobHeader = ()=>{
              </div>
             <div className={`sideBar ${sidebarOpen ? 'show':''}`}>
             <div className='sidebar-wrapper'>
-                <div className = 'auth-tab' >
-                <div className='auth-wrapper'>
-                        <Link to=''>Login</Link>
-                </div>
-                <div className='auth-wrapper'>
-                        <Link to=''>signup</Link>
-                </div>
-                </div>
-                <div className='side-body'>
-                    <div className='title'>Most Popular</div>
-                    <div className='link-btn'>
-                        <Link to='' >
-                            <div className='text'>Jobs</div>
-                            <div className='icon'>
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </div>
-                        </Link>  
+                    <div className = 'auth-tab' >
+                       {user? (
+                         <div onClick={handleLogout} className='auth-wrapper'>
+                         Logout
+                        </div>
+                       ):(
+                        <>
+                         <div className='auth-wrapper'>
+                                <Link to='/login/'>Login</Link>
+                        </div>
+                        <div className='auth-wrapper'>
+                                <Link to='/signup/'>signup</Link>
+                        </div>
+                            </>
+                       
+                       
+                       )}
+                        <div className='auth-wrapper'>
+                            <Link to='/create-course/'>Create Course</Link>
+                        </div>
+                        <div className='auth-wrapper'>
+                            <Link to='/jobs/'>Jobs</Link>
+                        </div>
+                        {user.is_employee ? (
+                            <div className='auth-wrapper'>
+                                    <Link to='/organization/employee/repository'>Repository</Link>
+                                </div>
+                            ):(
+                                <div className='auth-wrapper'>
+                                    <Link to='/organization/repository/'>Repository</Link>
+                                </div>
+                         )}
+                       
                     </div>
-                    <div className='link-btn'>
-                        <Link to='/user-courses/' >
-                            <div className='text'>Courses</div>
-                            <div className='icon'>
-                                <i class="fa-solid fa-chevron-right"></i>
+                    <div className='side-body'>
+                        <div className='title'>Most Popular</div>
+                        <div className='link-btn'>
+                            <Link to='' onClick={()=>toggleSubcategory('tab1')}>
+                                <div className='text'>Development</div>
+                                <div className='icon'>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </Link>
+                            <div className={`mobile-sub-category ${subCategory === 'tab1' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to='/search?query=Web Development' >Web Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to='/search?query=Mobile App Development' >Mobile App Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Data Science' >Data Science</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Programming Languages' >Programming Languagese</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Cyber Security' >Cyber Security</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Ethical hacking' >Ethical hacking</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Database Management System' >Database Management System</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Artificial Intelligence' >Artificial Intelligence</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Game Development' >Game Development</Link>
+                                </div>
+                                <div className='links-box'>
+                                <Link to='/search?query=Operating Systems & Servers' >Operating Systems & Servers</Link>
+                                </div>
                             </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link to='' >
-                            <div className='text'>Post Jobs</div>
-                            <div className='icon'>
-                                <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div className='link-btn'>
+                            <Link to='' className='section' onClick={()=>toggleSubcategory('tab2')}>
+                                <div className='text'>Finance & Accounting</div>
+                                <div className='icon'>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </Link>
+                            <div className={`mobile-sub-category ${subCategory === 'tab2' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Finance'>Finance</Link>
+                                </div>
+                              
+                               
+                                
                             </div>
-                        </Link>  
-                    </div>
-                    <div className='link-btn'>
-                        <Link to='' >
-                            <div className='text'>Help Center</div>
-                            <div className='icon'>
-                                <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div className='link-btn'>
+                            <Link to='' onClick={()=>toggleSubcategory('tab3')}>
+                                <div className='text'>IT Certification</div>
+                                <div className='icon'>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </Link>
+                            <div className={`mobile-sub-category ${subCategory === 'tab3' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Network & Security'>Network & Security</Link>
+                                </div>
+                                
+                                
                             </div>
-                        </Link>  
+                        </div>
+                        <div className='link-btn'>
+                            <Link to='' onClick={()=>toggleSubcategory('tab4')}>
+                                <div className='text'>Business</div>
+                                <div className='icon'>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </Link>
+                            <div className={`mobile-sub-category ${subCategory === 'tab4' ? 'show' : ''}`}>
+                                <div className='menu-tab' onClick={closeSubcategory}>
+                                    <div className='icon'>
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className='text'>Menu</div>
+                                </div>
+                                <div className='links-box'>
+                                    <Link to ='/search?query=Business Fundamentals'>Business Fundamentals</Link>
+                                </div>
+                               
+                               
+                                
+                            </div>
+                        </div>
+                       
                     </div>
-                    
                 </div>
-            </div>
             <div className='close-btn' onClick={toggleSidebar}>
                 <i class="fa-solid fa-x"></i>
             </div>

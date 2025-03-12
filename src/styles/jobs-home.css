@@ -31,6 +31,9 @@
     align-items: center;
     justify-content: center;
 }
+.jobs-body .box-wrapper-c i{
+   display: none;
+}
 .jobs-body .box-wrapper-a i,.jobs-body .box-wrapper-b i{
     position: absolute;
     top: 30%;
@@ -135,4 +138,17 @@
     right: 20px;
     font-size: 20px;
     padding: 3px;
+}
+
+@media screen and (max-width:699px) {
+    .jobs-body{
+        margin-top: 70px;
+        padding: 0 0;
+    }
+    .jobs-body .box-wrapper-c span{
+        display: none;
+     }
+     .jobs-body .box-wrapper-c i{
+        display: block;
+     }
 }

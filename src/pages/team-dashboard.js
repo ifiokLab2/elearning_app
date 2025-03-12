@@ -30,7 +30,7 @@ const TeamDashboard = ()=>{
     };
     
     useEffect(() => {
-        console.log('user.is_employee',user.is_employee)
+        console.log('user.is_employee',user)
         const fetchTeam = async () => {
             try {
               const response = await axios.get(`${apiUrl}/repository/team/${Id}/detail/`);

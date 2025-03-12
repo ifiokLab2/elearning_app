@@ -56,10 +56,10 @@ const OrganizationSidebar = ({ className,toggleSidebar })=>{
                     </div>
                     <div className='icon' onClick ={toggleSidebar}>
                         <i class="fa-solid fa-xmark"></i>
-                        {user.is_employee}
+                        {user?.is_employee}
                     </div>
                 </div>
-               { user.is_company ? (
+               { user?.is_company ? (
                     <>
                     <Link to = "/organization/dashboard/" className = "tabs" >
                         <div className='icon'>

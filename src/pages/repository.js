@@ -171,7 +171,7 @@ const Repository = ()=>{
                             <div class = 'org'>
                                 Repository
                             </div>
-                           <Link to ='/organization/repository/create/' className = "create-btn">create team</Link>
+                           <Link to ='/organization/repository/create/' className = "create-btn">create repository</Link>
                 </div>
                 <>
                     {loading ? (
@@ -183,7 +183,7 @@ const Repository = ()=>{
                             {teams.map((data, index) => (
                                 <Link to={`/repository/team/${data.id}/dashboard/`} className='cards organization-card' key={index}>
                                 <div className='icon hrms-icon'>
-                                    <img src={`${apiUrl}${data.logo}`} alt={data.name} />
+                                    <img src={`${data.logo}`} alt={data.name} />
                                 </div>
                                 <div className='text-wrapper'>
                                     <div className='title-header'>{data.name}</div>
@@ -212,7 +212,7 @@ const Repository = ()=>{
                             ))}
                             </div>
                         ) : (
-                            <h4>No repository..</h4>
+                            <h4>No data found.</h4>
                         )}
                         </>
                     )}
