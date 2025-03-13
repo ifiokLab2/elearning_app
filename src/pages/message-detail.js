@@ -128,7 +128,7 @@ const MessageDetail = ()=>{
           navigate('/login/');
           return;
       };
-      if(user.is_company === false || user.is_employee === false){
+      if(user.is_company === false && user.is_employee === false){
           navigate('/access-denied/');
           return;
       }

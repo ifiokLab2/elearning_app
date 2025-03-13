@@ -147,7 +147,7 @@ const EmployeeRepository = ()=>{
     };
     useEffect(() => {
        if( user === null || user.is_employee === false){
-            //navigate('/login');
+            navigate('/access-denied/');
             return ;
        }
 
