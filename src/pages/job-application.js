@@ -172,6 +172,7 @@ const JobApplication = ()=>{
                 const response = await axios.get(`${apiUrl}/job/${Id}/detail/`, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
+                        'Authorization': `Token ${user?.auth_token}`,
                          // Include the user ID in the Authorization header
                     },
                 });
