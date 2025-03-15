@@ -7,6 +7,73 @@
     flex-direction: column;
     min-height: 100vh;
 }
+.find-job-wrapper h3{
+    margin: 0;
+}
+.find-job-wrapper .job-search-outer{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+   
+}
+.find-job-wrapper .job-wrapper{
+    width: 100%;  
+    border: solid #282828 1.5px;
+    border-radius: 6px;
+    display: flex;
+    
+}
+.find-job-wrapper .box-wrapper-a{
+    flex-grow: 1;
+    position: relative;
+}
+
+.find-job-wrapper .box-wrapper-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.find-job-wrapper .box-wrapper-c i{
+   display: none;
+}
+.find-job-wrapper .box-wrapper-a i,.find-job-wrapper .box-wrapper-b i{
+    position: absolute;
+    top: 30%;
+    left: 12px;
+    color: #282828;
+    
+}
+
+.find-job-wrapper input{
+    padding: 18px 36px;
+    outline: transparent;
+    border: transparent;
+    font-weight: 600;
+    font-size: .8rem;
+}
+.find-job-wrapper input:focus{
+    border: solid #282828 2px;
+    
+}
+.find-job-wrapper .box-wrapper-b{
+   
+    flex-grow: 1;
+    position: relative;
+}
+.find-job-wrapper .find-btn{
+   
+    margin: 0 2px;
+    padding: 14px 20px;
+    background-color: #282828;
+    border: transparent;
+    font-size: .9rem;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+   
+}
 .hero-container{
     margin-top: 65px;
 }
@@ -171,7 +238,12 @@
 }
 
 @media screen and (max-width:799px){
-    
+    .find-job-wrapper .box-wrapper-c i{
+        display: block;
+     }
+     .find-job-wrapper .box-wrapper-c span{
+        display: none;
+     }
     .hero-container .dream-container{
         display: none;
        

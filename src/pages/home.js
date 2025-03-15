@@ -23,7 +23,7 @@ const Home = ()=>{
     const user = useSelector((state) => state.user.user);
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(false);
-   
+    const [locationQuery, setLocationQuery] = useState(""); 
     const [cart, setCart] = useState([]);
     const navigate = useNavigate();
 
@@ -101,6 +101,17 @@ const Home = ()=>{
         fetchCartCourses();
     }, []);
     
+    
+        // Handle Enter Key Press
+    const handleSearch = () => {
+        navigate(`/jobs?search=${searchQuery}&location=${locationQuery}`);
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
         // You can perform search-related actions here based on the searchQuery state
@@ -171,6 +182,39 @@ const Home = ()=>{
             </div>
 
             <div className='course-wrapper'>
+                <div className = 'find-job-wrapper'>
+                    <h3>Browse Popular Jobs</h3>
+                <div className='job-search-outer'>
+                <div className='job-wrapper'>
+                    <div className='box-wrapper-a'>
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                        
+                        <input
+                            placeholder="Job title, Keywords"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                        />
+                    </div>
+                    <div className='box-wrapper-b'>
+                        <i class="fa-solid fa-location-dot"></i>
+                        
+                        <input
+                            placeholder="Country, city, state, or remote"
+                            value={locationQuery}
+                            onChange={(e) => setLocationQuery(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                        />
+                    </div>
+                    <div className='box-wrapper-c'>
+                        <button className='find-btn' onClick={handleSearch}>
+                            <span>Find Jobs</span>
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+                </div>
                 <div className='popular'>
                     <h2>Popular Courses</h2>
                 </div>

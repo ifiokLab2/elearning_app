@@ -73,12 +73,12 @@ const Jobdetail = ()=>{
                    ):(
                     <Link to={`/job/application/${Id}/${title}/`} className='apply'>Apply now</Link>
                    )}
-                    <div className='saved'>
+                    {/*<div className='saved'>
                         <i class="fa-solid fa-bookmark"></i>
                     </div>
                     <div className='report'>
                         <i class="fa-solid fa-flag"></i>
-                    </div>
+                    </div> */}
                     
                 </div>
                 <h4>Full job description</h4>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Autoplay,Pagination,Navigation } from 'swiper/modules'
 import Header from '../components/header';
@@ -22,6 +22,7 @@ const JobsHome = ()=>{
     const [searchQuery, setSearchQuery] = useState("");
     const [locationQuery, setLocationQuery] = useState(""); 
     const user = useSelector((state) => state.user.user);
+    const location = useLocation();
 
 
     const handleEllipsisClick = (event,jobId) => {
@@ -51,42 +52,46 @@ const JobsHome = ()=>{
             setSavingJobId(null); // Reset saving state
         }
     };
-    const fetchJobs = async () => {
+    const fetchJobs = async (search = "", location = "") => {
         setLoading(true);
         try {
-          const response = await axios.get(`${apiUrl}/job/list/`, {
-            params: {
-              search: searchQuery,
-              location: locationQuery,
-            },
-          });
-          setJobs(response.data.all_jobs);
+            const response = await axios.get(`${apiUrl}/job/list/`, {
+                params: { search, location },
+            });
+            setJobs(response.data.all_jobs);
         } catch (error) {
-          console.error("Error fetching jobs:", error);
-          setJobs([]);
+            console.error("Error fetching jobs:", error);
+            setJobs([]);
         } finally {
-          setLoading(false);
+            setLoading(false);
         }
-      };
+    };
     const handleSearch = () => {
-    fetchJobs();
+        const params = new URLSearchParams();
+        if (searchQuery) params.set('search', searchQuery);
+        if (locationQuery) params.set('location', locationQuery);
+        window.history.pushState({}, '', `/jobs?${params.toString()}`);
+        fetchJobs(searchQuery, locationQuery);
     };
 
     // Handle Enter Key Press
     const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-        fetchJobs();
-    }
+        if (e.key === "Enter") {
+            fetchJobs();
+        }
     };
     useEffect(() => {
 
-    
+        const params = new URLSearchParams(location.search);
+        setSearchQuery(params.get('search') || '');
+        setLocationQuery(params.get('location') || '');
+        fetchJobs(params.get('search') || '', params.get('location') || '');
 
 
         
 
-        fetchJobs();
-    }, []);
+        //fetchJobs();
+    }, [location.search]);
     
     return(
        <div class = 'home-wrapper'>

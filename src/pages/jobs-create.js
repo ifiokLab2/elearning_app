@@ -37,9 +37,15 @@ const CreateJobs = ()=>{
     
 
 
-
     useEffect(() => {
-
+        if(user === null){
+            navigate('/login/');
+            return;
+        };
+        if(user.is_company === false){
+            navigate('/access-denied/');
+            return;
+        }
 
 
         const fetchCountry = async () => {
