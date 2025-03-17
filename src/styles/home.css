@@ -242,10 +242,48 @@
         grid-template-columns:repeat(2,1fr);
         grid-template-rows: auto;
     }
+    .find-job-wrapper .box-wrapper-a i{
+       display: none;
+    }
+    .find-job-wrapper .box-wrapper-b i{
+        display: none;
+     }
+     .find-job-wrapper .job-wrapper{
+        background-color: #282828;
+     }
+     .find-job-wrapper input{
+        padding: 7px 10px;
+        border-radius: 15px;
+        outline: none;
+     }
+     .find-job-wrapper .box-wrapper-a{
+        margin-right: 10px;
+     }
+     .find-job-wrapper .job-wrapper{
+        padding: 10px;
+     }
+     .find-job-wrapper .find-btn {
+       padding: 14px 7px;
+     }
+     .find-job-wrapper input:focus{
+        outline: none;
+        border: none;
+     }
+     
+    
+     .find-job-wrapper .job-wrapper{
+        display: flex;
+        align-items: center;
+     }
+    
     .category-wrapper .container-wrapper .card{
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 5px 10px;
-       
+       border: solid 1px #282828;
+       border-radius: 10px;
+       box-shadow: none;
+       justify-content: center;
      }
      .category-wrapper .container {
         padding: 10px 20px;
@@ -317,6 +355,7 @@
     }
     .category-wrapper .container-wrapper .card .text{
         font-size: .7rem;
+        line-height: 1;
     }
     .category-wrapper .container-wrapper .card .icon{
         font-size: .7rem;
