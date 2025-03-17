@@ -64,8 +64,8 @@ const JobHeader = ()=>{
                 <div className='menu-btn' onClick={toggleSidebar}>
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <Link to='' className='logo'>
-                    Logo
+                <Link to='/' className='logo'>
+                    Elearn-Jobs
                 </Link>
                 <Link to='/jobs/' className='job-link'>
                     Jobs

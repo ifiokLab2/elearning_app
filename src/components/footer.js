@@ -16,7 +16,7 @@ const Footer = ()=>{
 
                     </div>
                     <div class="footer-card">
-                        <div class="f-headline f-item">ABOUT DiasporaBlack</div>
+                        <div class="f-headline f-item">ABOUT Elearn-Jobs</div>
                         <div class="f-item">
                             <Link to=''>About Us</Link>
                         </div>

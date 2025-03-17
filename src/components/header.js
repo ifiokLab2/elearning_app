@@ -77,7 +77,7 @@ const Header = ()=>{
         <div className='header-wrapper'>
             <header className='header'>
                 <Link to='/' className='logo'>
-                    Elearning  
+                    Elearn-Jobs
                 </Link>
                 <div className='category-tab'>
                     <div className='title'>Categories</div>
@@ -379,7 +379,9 @@ const Header = ()=>{
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div className='mobile-logo'>
-                    <div className='title'>Elearning</div>
+                    <div className='title'>
+                        <Link style={{"color":'white',"textDecoration":"None"}} to ="/">Elearn-Jobs</Link>
+                    </div>
                 </div>
                 <div className='mobile-extra'>
                     <Link to='/cart/' className='cart'>

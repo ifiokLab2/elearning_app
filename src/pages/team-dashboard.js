@@ -76,7 +76,7 @@ const TeamDashboard = ()=>{
                             </div>
                             <div className='text-wrapper'>
                                 <div className='title-header'>Message dashboard</div>
-                                <p>some desc</p>
+                                <p>Post announcments, pitch ideas and keep discussions on topics.</p>
                                 <div className='employee-count'>
                                     { /*<i class="fa-solid fa-users"></i>
                                     <span>dept</span> */  }
@@ -93,7 +93,7 @@ const TeamDashboard = ()=>{
                             </div>
                             <div className='text-wrapper'>
                                 <div className='title-header'>Upload Files</div>
-                                <p>some desc</p>
+                                <p>Share and organize docs, spreadsheet,images and other files.</p>
                                 <div className='employee-count'>
                                     
                             
@@ -110,7 +110,7 @@ const TeamDashboard = ()=>{
                                 </div>
                                 <div className='text-wrapper'>
                                     <div className='title-header'>To Dos</div>
-                                    <p>some desc</p>
+                                    <p>Organize work across teams,assign tasks, set due date and discuss.</p>
                                     <div className='employee-count'>
                                         
                                 
@@ -127,7 +127,7 @@ const TeamDashboard = ()=>{
                                 </div>
                                 <div className='text-wrapper'>
                                     <div className='title-header'>To Dos</div>
-                                    <p>some desc</p>
+                                    <p>Organize work across teams,assign tasks, set due date and discuss.</p>
                                     <div className='employee-count'>
                                       
                                 
@@ -144,7 +144,7 @@ const TeamDashboard = ()=>{
                             </div>
                             <div className='text-wrapper'>
                                 <div className='title-header'>Chats</div>
-                                <p>some desc</p>
+                                <p>Chat casually with your team,ask questions and share news without ceremony.</p>
                                 <div className='employee-count'>
                                     
                             

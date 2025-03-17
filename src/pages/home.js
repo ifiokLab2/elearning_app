@@ -183,14 +183,14 @@ const Home = ()=>{
 
             <div className='course-wrapper'>
                 <div className = 'find-job-wrapper'>
-                    <h3>Browse Popular Jobs</h3>
+                    <h3>Find the latest Jobs</h3>
                 <div className='job-search-outer'>
                 <div className='job-wrapper'>
                     <div className='box-wrapper-a'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                         
                         <input
-                            placeholder="Job title, Keywords"
+                            placeholder="title, Keywords"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyPress={handleKeyPress}
