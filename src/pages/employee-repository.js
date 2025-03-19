@@ -146,10 +146,15 @@ const EmployeeRepository = ()=>{
         }
     };
     useEffect(() => {
-       if( user === null || user.is_employee === false){
-            navigate('/access-denied/');
-            return ;
-       }
+        if(user === null){
+            navigate('/login/');
+            return;
+        }else{
+            if(user.is_company === false){
+                navigate('/access-denied/');
+                return;
+            }
+        }
 
         fetchTeams();
     }, [navigate,user]);

@@ -32,11 +32,13 @@ const OrganizationDashboard = ()=>{
         if(user === null){
             navigate('/login/');
             return;
-        };
-        if(user.is_company === false){
-            navigate('/access-denied/');
-            return;
+        }else{
+            if(user.is_company === false){
+                navigate('/access-denied/');
+                return;
+            }
         }
+        
     
 
 

@@ -87,7 +87,7 @@
 }
 
 .header .logo{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-right: 5px;
     padding: 15px 0;
@@ -97,7 +97,7 @@
 
 .header .category-tab{
     margin: 0 15px; 
-    font-size: .9rem;
+    font-size: .8rem;
     cursor: pointer;
     position: relative;
 
@@ -213,8 +213,8 @@
     color: #5624d0;
 }
 .header .teach{
-    margin: 0 15px; 
-    font-size: .9rem;
+    margin: 0 7px; 
+    font-size: .8rem;
     position: relative;
     cursor: pointer;
     padding: 20px 0;

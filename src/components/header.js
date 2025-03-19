@@ -316,6 +316,23 @@ const Header = ()=>{
                             </div>
                         </div>
                     </div>
+                    <div className='teach'>
+                        <Link className='title' to='/Jobs/'>Jobs</Link>
+                        
+                    </div>
+                   
+                    {user?.is_company ? (
+                         <div className='teach'>
+                            <Link className='title' to='/organization/dashboard/' >Repository</Link>
+                         </div>
+                            
+                    ):(
+                        <div className='teach'>
+                          <Link className='title' to='/organization/employee/repository/' >Repository</Link>
+                       
+                       </div>
+                    )}
+                  
                     <div className='cart'>
                     <Link to='/cart/'>
                             <i className="fas fa-shopping-cart"></i>
@@ -340,7 +357,7 @@ const Header = ()=>{
                                     <div className = 'profile-card-container'>
                                         <Link to='/profile/' className='profile-link'>Profile</Link>
                                         <Link to='/profile/edit/' className='profile-link'>Edit profile</Link>
-                                        {user.is_company ? (
+                                        {user?.is_company ? (
                                              <Link to='/organization/dashboard/' className='profile-link'>Your organization</Link>
                                         ):(
                                             ""
