@@ -8,7 +8,7 @@
     min-height: 100vh;
 }
 .find-job-wrapper h3{
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 .find-job-wrapper .job-search-outer{
    
@@ -20,14 +20,16 @@
 }
 .find-job-wrapper .job-wrapper{
     width: 100%;  
-    border: solid #282828 1.5px;
-    border-radius: 6px;
+    padding: 10px;
     display: flex;
-    
+    background-color: #282828;
+    border-radius: 12px;
+    align-items: center;
 }
 .find-job-wrapper .box-wrapper-a{
     flex-grow: 1;
     position: relative;
+    margin-right: 14px;
 }
 
 .find-job-wrapper .box-wrapper-c{
@@ -36,25 +38,32 @@
     justify-content: center;
 }
 .find-job-wrapper .box-wrapper-c i{
-   display: none;
+   display: block;
 }
+.find-job-wrapper .box-wrapper-c span{
+    display: none;
+ }
 .find-job-wrapper .box-wrapper-a i,.find-job-wrapper .box-wrapper-b i{
     position: absolute;
     top: 30%;
     left: 12px;
     color: #282828;
+    display: none;
     
 }
 
 .find-job-wrapper input{
-    padding: 18px 36px;
+    padding: 10px 16px;
     outline: transparent;
     border: transparent;
     font-weight: 600;
     font-size: .8rem;
+    border-radius: 15px;
+    
 }
 .find-job-wrapper input:focus{
-    border: solid #282828 2px;
+   border: none;
+   outline: none;
     
 }
 .find-job-wrapper .box-wrapper-b{
@@ -70,7 +79,6 @@
     border: transparent;
     font-size: .9rem;
     color: white;
-    border-radius: 6px;
     cursor: pointer;
    
 }
@@ -84,14 +92,18 @@
 .hero-container .dream-container{
     position: absolute;
     margin-bottom: 22px;
-    background-color: white;
-    
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     width: 400px;
     top: 20%;
     left: 4%;
     z-index: 1;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius:12px;
+   border: solid #282828 1px;
+    
     
 }
 .hero-container .dream-container .search-box{
@@ -99,6 +111,7 @@
     border-radius: 8px;
     display: flex;
     padding: 3px;
+    
 }
 .hero-container .dream-container .search-box input{
     flex-grow: 1;
@@ -114,13 +127,14 @@
     align-items: center;
     justify-content: center;
     font-size: 1rem;
+    background-color: white;
 }
 .mobile-dream{
     display: none;
 }
 
 .course-wrapper{
-    padding: 20px 40px;
+    padding: 20px 80px;
 }
 .course-wrapper .course-container{
     display: grid;
@@ -138,7 +152,7 @@
     position: relative;
 }
 .course-wrapper .course-container  .heart-button i{
-    padding: 4px 10px;
+    padding: 10px 10px;
 }
 .course-wrapper .course-container  .heart-button{
     position: absolute;
@@ -161,9 +175,12 @@
 }
 
 .course-wrapper .course-container .card img{
+   /* height: 40%;
+    width: 100%;
+    object-fit: contain;*/
     height: 40%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -185,6 +202,10 @@
 }
 .course-wrapper .course-container .card-details .stars i{
     color: gold;
+    font-size: .8rem;
+}
+.course-wrapper .course-container .card-details .stars .gray{
+    color:#6a6f73;
     font-size: .8rem;
 }
 .course-wrapper .course-container .card-details .box{
@@ -215,52 +236,72 @@
     justify-content: center;
 }
 .category-wrapper .container{
-    padding: 10px 80px;
+    padding: 10px 20px;
+    width: 100%;
    
 }
 .category-wrapper .container .title{
     font-weight: 900;
    
 }
-
-.category-wrapper .container-wrapper .card{
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 15px 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+.category-wrapper .container-wrapper{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows: auto;
 }
+.category-wrapper .container-wrapper .card{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 40px;
+    border: solid 1px #282828;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    justify-content:flex-start;
+    margin: 10px 5px;
+    text-decoration: none;
+}
+.category-wrapper .container-wrapper .card .text{
+    color: #282828;
+}
+.category-wrapper .container-wrapper .card .wrap{
+    display: flex;
+    align-items: flex-start;
+}
+
 
 .category-wrapper .container-wrapper .card .icon{
     margin-right: 5px;
     
 }
+.category-wrapper .container {
+    padding: 10px 80px;
+}
 
 @media screen and (max-width:799px){
-    .category-wrapper .container-wrapper{
-        display: grid;
-        grid-template-columns:repeat(2,1fr);
-        grid-template-rows: auto;
+    .course-wrapper{
+        padding: 20px 18px;
     }
+   
     .find-job-wrapper .box-wrapper-a i{
        display: none;
     }
     .find-job-wrapper .box-wrapper-b i{
         display: none;
      }
-     .find-job-wrapper .job-wrapper{
-        background-color: #282828;
-     }
+     
      .find-job-wrapper input{
         padding: 7px 10px;
-        border-radius: 15px;
+        border-radius: 10px;
         outline: none;
      }
      .find-job-wrapper .box-wrapper-a{
-        margin-right: 10px;
+        margin-right: 7px;
      }
      .find-job-wrapper .job-wrapper{
-        padding: 10px;
+        padding: 5px  8px;
+        background-color: #282828;
+        
      }
      .find-job-wrapper .find-btn {
        padding: 14px 7px;
@@ -276,15 +317,7 @@
         align-items: center;
      }
     
-    .category-wrapper .container-wrapper .card{
-        display: flex;
-        align-items: center;
-        padding: 5px 10px;
-       border: solid 1px #282828;
-       border-radius: 10px;
-       box-shadow: none;
-       justify-content: center;
-     }
+    
      .category-wrapper .container {
         padding: 10px 20px;
     }
@@ -329,6 +362,7 @@
     .mobile-dream .dream-container{
         margin-bottom: 2px;
         background-color: white;
+       
         padding: 0 20px 20px 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
@@ -361,4 +395,12 @@
         font-size: .7rem;
     }
 
+}
+
+@media screen and (max-width:425px){
+    .category-wrapper .container-wrapper{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+        grid-template-rows: auto;
+    }
 }

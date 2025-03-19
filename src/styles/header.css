@@ -299,8 +299,10 @@
     border: solid #2d2f31 1px;
     padding: 10px 20px;
     text-decoration: none;
+    border-radius: 8px;
 }
 .header .offline-login{
+    border-radius: 8px;
     background-color: white;
     padding: 10px 20px;
     font-size: .9rem;
@@ -308,6 +310,7 @@
 }
 .header .offline-signup{
     padding: 10px 20px;
+    border-radius: 8px;
     font-size: .9rem;
     text-decoration: none; 
     color: white;
@@ -320,6 +323,7 @@
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    border-radius: 8px;
 
 }
 

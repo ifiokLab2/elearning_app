@@ -47,7 +47,7 @@ const Home = ()=>{
            if (response.data.success) {
                 // Update the list of cart courses
                  fetchCartCourses();
-                 console.error('added to cart:',response.data);
+                // console.error('added to cart:',response.data);
             } else {
                 console.error('removed from cart:',response.data);
             }
@@ -69,6 +69,7 @@ const Home = ()=>{
           setCart(response.data.courses);
           console.log('cart:',cart);
         } catch (error) {
+            setCart([]);
           console.error('Error fetching cart courses:', error);
         }
     };
@@ -251,7 +252,7 @@ const Home = ()=>{
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star-half"></i>
+                                                    <i class="fa-solid fa-star gray"></i>
                                                 </span>
                                                 <span className='students box'>
                                                     {/*(218,087) */}
@@ -277,70 +278,102 @@ const Home = ()=>{
                     <div className='title'>Top Categories</div>
                     <div className='container-wrapper'>
                         <Link className='card' to='/search?query=Web Development'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </span>
-                            <span className='text'>Web Development</span>
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </span>
+                                <span className='text'>Web Development</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Mobile App Development'>
+                        <div className = 'wrap'>
                             <span className='icon'>
-                            <i class="fa-solid fa-mobile"></i>
+                                <i class="fa-solid fa-mobile"></i>
                             </span>
                             <span className='text'>Mobile App Development</span>
+                        </div>
+                           
                         </Link>
                         <Link className='card' to='/search?query=Programming Languages'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-code"></i>
-                            </span>
-                            <span className='text'>Programming Languages</span>
+                            
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-code"></i>
+                                </span>
+                                <span className='text'>Programming Languages</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Cyber Security'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </span>
-                            <span className='text'>Cyber Security</span>
+                           
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </span>
+                                <span className='text'>Cyber Security</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Ethical hacking'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-user-secret"></i>
-                            </span>
-                            <span className='text'>Ethical hacking</span>
+                           
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-user-secret"></i>
+                                </span>
+                                <span className='text'>Ethical hacking</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Database Management system'>
-                            <span className='icon'>
-                                 <i class="fa-solid fa-database"></i>
-                            </span>
-                            <span className='text'>Database Management system</span>
+                           
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-database"></i>
+                                </span>
+                                <span className='text'>Database Management system</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Data Science'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-chart-simple"></i>
-                            </span>
-                            <span className='text'>Data Science</span>
+                            
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                </span>
+                                <span className='text'>Data Science</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Artificial Intelligence' >
-                            <span className='icon'>
-                                <i class="fa-brands fa-connectdevelop"></i>
-                            </span>
-                            <span className='text'>Artificial Intelligence</span>
+                           
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-brands fa-connectdevelop"></i>
+                                </span>
+                                <span className='text'>Artificial Intelligence</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Game Development'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-gamepad"></i>
-                            </span>
-                            <span className='text'>Game Development</span>
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-gamepad"></i>
+                                </span>
+                                <span className='text'>Game Development</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Operating Systems & Servers'> 
-                            <span className='icon'>
-                                <i class="fa-solid fa-server"></i>
-                            </span>
-                            <span className='text'>Operating Systems & Servers</span>
+                           
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-server"></i>
+                                </span>
+                                <span className='text'>Operating Systems & Servers</span>
+                            </div>
                         </Link>
                         <Link className='card' to='/search?query=Graphic Design & illustration'>
-                            <span className='icon'>
-                                <i class="fa-solid fa-compass-drafting"></i>
-                            </span>
-                            <span className='text'>Graphic Design & illustration</span>
+                           
+
+                            <div className = 'wrap'>
+                                <span className='icon'>
+                                    <i class="fa-solid fa-compass-drafting"></i>
+                                </span>
+                                <span className='text'>Graphic Design & illustration</span>
+                            </div>
                         </Link>
                         
                     </div>

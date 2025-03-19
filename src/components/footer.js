@@ -35,7 +35,7 @@ const Footer = ()=>{
 
                     </div>
                     <div class="footer-card">
-                        <div class="f-headline ">ELEARNING INTERNATIONAL</div>
+                        <div class="f-headline ">ELEARN-JOBS INTERNATIONAL</div>
                         <div class="f-item">
                             <Link to=''>Teach on ELEARNING</Link>
                         </div>
