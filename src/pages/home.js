@@ -10,7 +10,7 @@ import apiUrl from '../components/api-url';
 import 'swiper/swiper-bundle.css';
 import '../styles/home.css';
 import logo from '../styles/logo.svg';
-import hero1 from '../styles/hero1.jpg';
+import hero6 from '../styles/hero-6.webp';
 import hero2 from '../styles/hero-2.jpg';
 import hero3 from '../styles/hero-3.jpg';
 import Skeleton from 'react-loading-skeleton';
@@ -120,8 +120,8 @@ const Home = ()=>{
         navigate(`/search?query=${searchQuery}`);
     };
     const slides = [
-
        hero2,
+     
        hero3,
        
         // Add more image URLs as needed

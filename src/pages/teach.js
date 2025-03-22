@@ -5,6 +5,8 @@ import 'swiper/swiper-bundle.css';
 import '../styles/teach.css';
 import logo from '../styles/logo.svg';
 import hero1 from '../styles/hero1.jpg';
+import hero3 from '../styles/billboard-desktop-v4.webp';
+import hero2 from '../styles/plan-your-curriculum-v3 (1).jpg';
 
 const Teach = ()=>{
     const [openSlideSections, setOpenSlideSections] = useState(0);
@@ -15,7 +17,7 @@ const Teach = ()=>{
         <div className='page-wrapper'>
             <Header/>
             <div className='hero-wrapper'>
-                <img src={hero1} />
+                <img src={hero3} />
                 <div className='teach-wrapper'>
                     <h1>Come teach with us</h1>
                     <div className='text'>
@@ -93,7 +95,7 @@ const Teach = ()=>{
                                     How we help you
                                     We offer plenty of resources on how to create your first course. And, our instructor dashboard and curriculum pages help keep you organized.
                                 </div>
-                                <img src={logo} alt ='' />
+                                <img src={hero2} alt ='' />
                             </div>
                         )}
                         {openSlideSections === 1 && (
@@ -106,7 +108,7 @@ const Teach = ()=>{
                                     How we help you
                                     Our custom coupon tool lets you offer enrollment incentives while our global promotions drive traffic to courses. There’s even more opportunity for courses chosen for Udemy Business.
                                 </div>
-                                <img src={logo} alt ='' />
+                                <img src={hero2} alt ='' />
                             </div>
                         )}
                         {openSlideSections === 2 && (
@@ -119,7 +121,7 @@ const Teach = ()=>{
                                     How we help you
                                     Our support team is available to help you throughout the process and provide feedback on test videos.
                                 </div>
-                                <img src={logo} alt ='' />
+                                <img src={hero2} alt ='' />
                             </div>
                         )}
                     </div>

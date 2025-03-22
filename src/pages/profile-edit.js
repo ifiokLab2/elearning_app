@@ -112,7 +112,7 @@ const EditProfile = ()=>{
                 setTitle(response.data.data.title);
                 setWebsite(response.data.data.website);
                 setPhone(response.data.data.phone);
-                setPreviousPicture(response.data.data.picture)
+                setPreviousPicture(response.data.data.picture_name)
                 //setPreviousPicture Redirect to the home page
                
             } else {

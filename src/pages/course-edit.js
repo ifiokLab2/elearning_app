@@ -182,8 +182,8 @@ const CourseEdit = ()=>{
           setPrice(response.data.price);
           setOverview(response.data.overview);
           setDescription(response.data.description);
-          setPreviousThumbnail(response.data.thumbnail);
-          setPreviousVideo(response.data.preview_video);
+          setPreviousThumbnail(response.data.thumbnail_name);
+          setPreviousVideo(response.data.preview_video_name);
           
          
           //setLoading(false);
@@ -274,7 +274,7 @@ const CourseEdit = ()=>{
 
                 
                 <div className={`form-group ${overview ? 'active' : ''}`}>
-                    <textarea  maxLength={70} value={overview} id = 'overview' onChange= {handleOverviewChange} required></textarea>
+                    <textarea  value={overview} id = 'overview' onChange= {handleOverviewChange} required></textarea>
                     <label  htmlFor="overview">course verview</label>
                 </div>
 

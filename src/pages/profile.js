@@ -48,7 +48,7 @@ const Profile = ()=>{
                 <div className='wrapper'>
                     <div className='profile-container'>
                         <div className='caption'>Your Profile</div>
-                        <img src={`${apiUrl}${profile.picture}`} alt = 'instructor' />
+                        <img src={`${profile.picture}`} alt = 'instructor' />
                         <div className='author-details'>
                             <div className='name'>
                                 {profile.first_name} {profile.last_name}
