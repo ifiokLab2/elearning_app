@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
+import apiUrl from '../components/api-url';
 //import 'react-quill/dist/quill.snow.css'; // Import the styles
 
 
@@ -41,7 +42,7 @@ const EditProfile = ()=>{
             // Check if thumbnail is a file (not a base64 string)
            
     
-            const response = await axios.put('http://127.0.0.1:8000/profile/edit/', formData, {
+            const response = await axios.put(`${apiUrl}/profile/edit/`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Token ${User.auth_token}`, // Include the user ID in the Authorization header
@@ -98,7 +99,7 @@ const EditProfile = ()=>{
 
     const fetchProfileData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/profile/fetch/`,{
+          const response = await axios.get(`${apiUrl}/profile/fetch/`,{
             headers: {
                 Authorization: `Token ${User?.auth_token}`,
             },

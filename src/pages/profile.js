@@ -19,7 +19,7 @@ const Profile = ()=>{
 
     const fetchProfile = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/fetch-profile/`,{
+            const response = await axios.get(`${apiUrl}/api/fetch-profile/`,{
                 headers: {
                     Authorization: `Token ${user?.auth_token}`,
                 },
@@ -31,14 +31,14 @@ const Profile = ()=>{
             };
         
         } catch (error) {
-            navigate('/access-denied/');
+           console.log('an error occurred')
          
         }   
     };
     useEffect(() => {
 
       fetchProfile();
-    }, []);
+    }, [user]);
 
     return(
         <div className='page-wrapper'>

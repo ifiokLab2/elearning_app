@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
+import apiUrl from '../components/api-url';
 //import 'react-quill/dist/quill.snow.css'; // Import the styles
 
 
@@ -40,7 +41,7 @@ const CreateProfile = ()=>{
             // Check if thumbnail is a file (not a base64 string)
            
     
-            const response = await axios.post('${apiUrl}/profile/create/', formData, {
+            const response = await axios.post(`${apiUrl}/profile/create/`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Token ${User.auth_token}`, // Include the user ID in the Authorization header

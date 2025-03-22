@@ -433,6 +433,9 @@ const Header = ()=>{
                             <Link to='/create-course/'>Create Course</Link>
                         </div>
                         <div className='auth-wrapper'>
+                            <Link to='/teach/'>Teach</Link>
+                        </div>
+                        <div className='auth-wrapper'>
                             <Link to='/jobs/'>Jobs</Link>
                         </div>
                         {user?.is_employee ? (
