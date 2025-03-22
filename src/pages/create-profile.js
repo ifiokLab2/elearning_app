@@ -102,7 +102,7 @@ const CreateProfile = ()=>{
     useEffect(() => {
         // Check if the user is authenticated  !User && User.isInstructor === true 
        
-        if (User!== null ) {
+        if (User== null ) {
             // Redirect to the login page
             navigate('/login');
             return; // Stop further execution of useEffect

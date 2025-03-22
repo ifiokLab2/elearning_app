@@ -32,7 +32,7 @@ const Profile = ()=>{
         
         } catch (error) {
            console.log('an error occurred')
-         
+            
         }   
     };
     useEffect(() => {

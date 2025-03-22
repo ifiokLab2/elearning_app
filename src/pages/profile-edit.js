@@ -36,7 +36,10 @@ const EditProfile = ()=>{
             formData.append('title', title);
             formData.append('biography', biography);
             formData.append('website', website);
-            formData.append('picture', profilePicture);
+            
+            if(profilePicture != ""){
+                formData.append('picture', profilePicture);
+            }
             formData.append('phone', phone);
     
             // Check if thumbnail is a file (not a base64 string)
@@ -52,7 +55,7 @@ const EditProfile = ()=>{
             if (response.data.success) {
                 setTimeout(() => {
                     setIsLoading(isLoading);
-                    navigate('/');
+                    navigate('/profile/');
                    
                 }, 2000);
                 console.log('profile created successfully:', response.data.course);
@@ -185,7 +188,7 @@ const EditProfile = ()=>{
                     id="profilePicture"
                     name="profilePicture"
                     onChange={handleFileChange}
-                    required
+                    
                     />
                 </div>
                
