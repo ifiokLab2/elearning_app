@@ -109,9 +109,13 @@ const JobHeader = ()=>{
                         Login{user?.first_name}
                     </Link>
                 )}
-                <Link to = '/organization/jobs/create/' className='job-link'>
+                {user ? (
+                    <Link to = '/organization/jobs/create/' className='job-link'>
                     Post Job
-                </Link>
+                    </Link>
+                ):(
+                    ""
+                )}
            </div>
            
              </div>

@@ -20,9 +20,7 @@ const Footer = ()=>{
                         <div class="f-item">
                             <Link to=''>About Us</Link>
                         </div>
-                        <div class="f-item">
-                            <Link to=''>Contact Us</Link>
-                        </div>
+                        
 
                     </div>
                     <div class="footer-card">
@@ -39,9 +37,7 @@ const Footer = ()=>{
                         <div class="f-item">
                             <Link to=''>Teach on ELEARNING</Link>
                         </div>
-                        <div class="f-item">
-                            <a href="">UK</a>
-                        </div>
+                        
 
                     </div>
                 </div>

@@ -175,7 +175,7 @@ const CourseEdit = ()=>{
     };
     const fetchCourseDetail = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/courses/${id}/`);
+          const response = await axios.get(`${apiUrl}/courses/${id}/`);
           //setCourse(response.data);
           console.log('response.data:',response.data);
           setTitle(response.data.title);
@@ -205,7 +205,7 @@ const CourseEdit = ()=>{
         // Fetch categories and default subcategories
         const fetchData = async () => {
             try {
-                const categoriesResponse = await axios.get('${apiUrl}/api/categories/');
+                const categoriesResponse = await axios.get(`${apiUrl}/api/categories/`);
                 setCategories(categoriesResponse.data);
     
                 if (categoriesResponse.data.length > 0) {

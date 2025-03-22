@@ -225,7 +225,7 @@ const CreateCourse = ()=>{
 
                 
                 <div className={`form-group ${overview ? 'active' : ''}`}>
-                    <textarea  maxLength={70} value={overview} id = 'overview' onChange= {handleOverviewChange} required></textarea>
+                    <textarea  value={overview} id = 'overview' onChange= {handleOverviewChange} required></textarea>
                     <label  htmlFor="overview">course verview</label>
                 </div>
 

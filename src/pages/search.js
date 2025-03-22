@@ -97,42 +97,49 @@ const Search = ()=>{
         <div className='search-wrapper'>
             <div className='course-wrapper'>
                     <div className='popular'>
-                        <h2>Showing results for "{term}"</h2>
+                        <h2>"{term}"</h2>
                     </div>
                 
                         <div className='course-container'>
-                            {results.map((course) => (
-                                <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
-                                    <img src ={course.thumbnail} alt='image' />
+                            {results.length > 0 ? (
+                                <>
+                                    {results.map((course) => (
+                                        <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
+                                            <img src ={course.thumbnail} alt='image' />
 
-                                
-                                    <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}>
-                                        {/* fa-regular fa-heart Add onClick handler to trigger adding the course to the cart */}
-                                        <i className={`${isInCart(course.id) ? 'fa-solid' : 'fa-regular' } fa-heart` } onClick={(e) => handleAddToCart(e,course.id)}></i>
-                                    </div>
-                                    <div className='card-details'>
-                                        <h2>{course.title}</h2>
-                                        <div className='author-name'>{course.instructor}</div>
-                                        <div className='ratings-card'>
-                                            <span className='num box'>4.5</span>
-                                            <span className='stars box'>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star-half"></i>
-                                            </span>
-                                            <span className='students box'>
-                                                
-                                            </span>
-                                        </div>
-                                        <div className='price-card'>
-                                        <span className='price'>${course.price}</span>
-                                        <span className='discount'>${course.discountPrice}</span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
+                                        
+                                            <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}>
+                                                {/* fa-regular fa-heart Add onClick handler to trigger adding the course to the cart */}
+                                                <i className={`${isInCart(course.id) ? 'fa-solid' : 'fa-regular' } fa-heart` } onClick={(e) => handleAddToCart(e,course.id)}></i>
+                                            </div>
+                                            <div className='card-details'>
+                                                <h2>{course.title}</h2>
+                                                <div className='author-name'>{course.instructor}</div>
+                                                <div className='ratings-card'>
+                                                    <span className='num box'>4.5</span>
+                                                    <span className='stars box'>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star-half"></i>
+                                                    </span>
+                                                    <span className='students box'>
+                                                        
+                                                    </span>
+                                                </div>
+                                                <div className='price-card'>
+                                                <span className='price'>${course.price}</span>
+                                                <span className='discount'>${course.discountPrice}</span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </>
+                            ):(
+                               <h3>No data found.</h3> 
+                            )}
+                            
                             
                         </div>
                     
