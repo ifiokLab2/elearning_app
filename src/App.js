@@ -73,12 +73,17 @@ import EditOrganizationProfile from './pages/organization-profile-edit';
 import EmployeeList from './pages/employee-list';
 import ForgotPassword from './pages/forgot-password';
 import PasswordConfirm from './pages/password-confirm';
+import ContactPage from './pages/contact-page';
+import AboutPage from './pages/about-page';
+
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="about/" element={<AboutPage />} />
+      <Route path="contact-us/" element={<ContactPage />} />
       <Route path="/password/reset/confirm/:uuid/:token/" element={<PasswordConfirm />} />
       <Route path="/forgot-password/" element={<ForgotPassword />} />
       <Route path="organization/employee/list/" element={<EmployeeList  />} />

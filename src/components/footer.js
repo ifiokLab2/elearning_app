@@ -11,14 +11,14 @@ const Footer = ()=>{
                     <div class="footer-card">
                         <div class="f-headline f-item">LET US HELP YOU</div>
                         <div class="f-item">
-                            <Link to=''>Contact Us</Link>
+                            <Link to='/contact-us/'>Contact Us</Link>
                         </div>
 
                     </div>
                     <div class="footer-card">
                         <div class="f-headline f-item">ABOUT Elearn-Jobs</div>
                         <div class="f-item">
-                            <Link to=''>About Us</Link>
+                            <Link to='/about/'>About Us</Link>
                         </div>
                         
 

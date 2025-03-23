@@ -128,7 +128,7 @@ const Home = ()=>{
     ];
     return(
        <>
-            <div class = 'home-wrapper'>
+         <div class = 'home-wrapper'>
         <Header />
         <div className='hero-container'>
                 <Swiper
