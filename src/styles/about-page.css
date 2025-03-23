@@ -190,9 +190,9 @@
   }
   
   .about-wrapper .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     color:white;
     text-align: center;
   }
@@ -222,6 +222,13 @@
     .about-wrapper .hero-title {
       font-size: 2.5rem;
     }
+    .about-wrapper .hero-content h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color:white;
+        text-align: center;
+      }
   }
   
   @media (min-width: 768px) {
