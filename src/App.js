@@ -75,13 +75,16 @@ import ForgotPassword from './pages/forgot-password';
 import PasswordConfirm from './pages/password-confirm';
 import ContactPage from './pages/contact-page';
 import AboutPage from './pages/about-page';
-
+import OrganizationDenied from './pages/organization-denied';
+import InstructorDenied from './pages/instructor-denied';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/instructor/denied/" element={<InstructorDenied />} />
+      <Route path="/organization/denied/" element={<OrganizationDenied />} />
       <Route path="about/" element={<AboutPage />} />
       <Route path="contact-us/" element={<ContactPage />} />
       <Route path="/password/reset/confirm/:uuid/:token/" element={<PasswordConfirm />} />

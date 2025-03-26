@@ -151,7 +151,7 @@ const Repository = ()=>{
             return;
         };
         if(user.is_company === false && user.is_employee === false){
-            navigate('/access-denied/');
+            navigate('/organization/denied/');
             return;
         }
 

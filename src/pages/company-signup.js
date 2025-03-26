@@ -1,10 +1,11 @@
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link  } from 'react-router-dom';
 import React, { useState} from 'react';
 import axios from 'axios';
 import Header from '../components/header';
 import 'swiper/swiper-bundle.css';
 import '../styles/signup.css';
+
 import Footer from '../components/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
@@ -150,6 +151,7 @@ const CompanySignup = ()=>{
                             
                         </button>
                     </div>
+                    <Link to='/login/' className='link-wrapper'>Login</Link>
                 </form>
             </div>
         </div>

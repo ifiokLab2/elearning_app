@@ -150,8 +150,8 @@ const EmployeeRepository = ()=>{
             navigate('/login/');
             return;
         }else{
-            if(user.is_company === false){
-                navigate('/access-denied/');
+            if(user.is_employee === false){
+                navigate('/organization/denied/');
                 return;
             }
         }

@@ -146,12 +146,12 @@ const CreateCourse = ()=>{
        
         if (User=== null ) {
             // Redirect to the login page
-            navigate('/instructor-login/');
+            navigate('/login/');
             return; // Stop further execution of useEffect
         }
         if ( User?.isInstructor === false ) {
             // Redirect to the login page
-            navigate('/access-denied/');
+            navigate('/instructor/denied/');
             return; // Stop further execution of useEffect
         }
 

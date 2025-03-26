@@ -146,12 +146,13 @@ const Objectives = () => {
   useEffect(() => {
     if (user=== null ) {
       // Redirect to the login page
-      navigate('/instructor-login/');
+      navigate('/login/');
       return; // Stop further execution of useEffect
   }
+  
   if ( user?.isInstructor === false ) {
       // Redirect to the login page
-      navigate('/access-denied/');
+      navigate('/instructor/denied/');
       return; // Stop further execution of useEffect
   }
     checkCourseOwner();

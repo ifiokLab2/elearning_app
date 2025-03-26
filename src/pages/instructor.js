@@ -25,7 +25,7 @@ const Instructor = ()=>{
        
         if (User=== null ) {
             // Redirect to the login page
-            navigate('/instructor-login/');
+            navigate('/login/');
             return; // Stop further execution of useEffect
         }
         if ( User?.isInstructor === false ) {

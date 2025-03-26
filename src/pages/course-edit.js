@@ -195,12 +195,16 @@ const CourseEdit = ()=>{
 
     useEffect(() => {
         // Check if the user is authenticated  !User && User.isInstructor === true 
-       
-       /* if (User.isInstructor === true ) {
+        if (User=== null ) {
             // Redirect to the login page
-            navigate('/login');
+            navigate('/login/');
             return; // Stop further execution of useEffect
-        } */
+        }
+        if ( User?.isInstructor === false ) {
+            // Redirect to the login page
+            navigate('/instructor/denied/');
+            return; // Stop further execution of useEffect
+        }
     
         // Fetch categories and default subcategories
         const fetchData = async () => {

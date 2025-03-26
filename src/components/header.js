@@ -323,7 +323,7 @@ const Header = ()=>{
                    
                     {user?.is_company ? (
                          <div className='teach'>
-                            <Link className='title' to='/organization/dashboard/' >Repository</Link>
+                            <Link className='title' to='/organization/repository/' >Repository</Link>
                          </div>
                             
                     ):(
