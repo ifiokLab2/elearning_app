@@ -166,7 +166,7 @@ const Home = ()=>{
             <div className='mobile-dream'>
             <div className = 'dream-container'>
                     <div className='wrapper'>
-                        <h2>Dream Up</h2>
+                        <h2>Find Courses</h2>
                         <p>Ambition accepted. Learn the latest skills to reach your professional goals.</p>
                         <form className='search-box' onSubmit={handleSubmit}>
                             <input 

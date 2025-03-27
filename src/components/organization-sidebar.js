@@ -51,7 +51,7 @@ const OrganizationSidebar = ({ className,toggleSidebar })=>{
             <div className = "box-a">
                 <div className='header-tab'>
                     <div className='text'>
-                    logo
+                    <Link to='/'>Logo</Link>
                         
                     </div>
                     <div className='icon' onClick ={toggleSidebar}>
