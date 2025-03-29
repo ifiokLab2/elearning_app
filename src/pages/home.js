@@ -25,9 +25,12 @@ const Home = ()=>{
     const [loading, setLoading] = useState(false);
     const [locationQuery, setLocationQuery] = useState(""); 
     const [cart, setCart] = useState([]);
+    const [cardOpen, setCardOpen] = useState(false);
     const navigate = useNavigate();
 
-  
+    const toggleCards = ()=>{
+        setCardOpen(!cardOpen);
+    };
     const handleInputChange = (e) => {
       setSearchQuery(e.target.value);
      
@@ -147,7 +150,7 @@ const Home = ()=>{
                 <div className = 'dream-container'>
                     <div className='wrapper'>
                         <h2>Find Courses</h2>
-                        <p>Ambition accepted. Learn the latest skills to reach your professional goals.</p>
+                        <p>Find and learn the latest courses to reach your professional goals.</p>
                         <form className='search-box' onSubmit={handleSubmit}>
                              
                             <input 
@@ -167,7 +170,7 @@ const Home = ()=>{
             <div className = 'dream-container'>
                     <div className='wrapper'>
                         <h2>Find Courses</h2>
-                        <p>Ambition accepted. Learn the latest skills to reach your professional goals.</p>
+                        <p>Find and learn the latest courses to reach your professional goals.</p>
                         <form className='search-box' onSubmit={handleSubmit}>
                             <input 
                                 placeholder='What do you want to learn?'
@@ -321,60 +324,80 @@ const Home = ()=>{
                                 <span className='text'>Ethical hacking</span>
                             </div>
                         </Link>
-                        <Link className='card' to='/search?query=Database Management system'>
+                        
+                        {cardOpen && (
+                            <>
+                                <Link className='card' to='/search?query=Database Management system'>
                            
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-solid fa-database"></i>
-                                </span>
-                                <span className='text'>Database Management system</span>
-                            </div>
-                        </Link>
-                        <Link className='card' to='/search?query=Data Science'>
-                            
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-solid fa-chart-simple"></i>
-                                </span>
-                                <span className='text'>Data Science</span>
-                            </div>
-                        </Link>
-                        <Link className='card' to='/search?query=Artificial Intelligence' >
-                           
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-brands fa-connectdevelop"></i>
-                                </span>
-                                <span className='text'>Artificial Intelligence</span>
-                            </div>
-                        </Link>
-                        <Link className='card' to='/search?query=Game Development'>
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-solid fa-gamepad"></i>
-                                </span>
-                                <span className='text'>Game Development</span>
-                            </div>
-                        </Link>
-                        <Link className='card' to='/search?query=Operating Systems & Servers'> 
-                           
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-solid fa-server"></i>
-                                </span>
-                                <span className='text'>Operating Systems & Servers</span>
-                            </div>
-                        </Link>
-                        <Link className='card' to='/search?query=Graphic Design & illustration'>
-                           
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-solid fa-database"></i>
+                                        </span>
+                                        <span className='text'>Database Management system</span>
+                                    </div>
+                                </Link>
+                                <Link className='card' to='/search?query=Data Science'>
+                                    
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-solid fa-chart-simple"></i>
+                                        </span>
+                                        <span className='text'>Data Science</span>
+                                    </div>
+                                </Link>
+                                <Link className='card' to='/search?query=Artificial Intelligence' >
+                                    
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-brands fa-connectdevelop"></i>
+                                        </span>
+                                        <span className='text'>Artificial Intelligence</span>
+                                    </div>
+                                </Link>
+                                <Link className='card' to='/search?query=Game Development'>
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-solid fa-gamepad"></i>
+                                        </span>
+                                        <span className='text'>Game Development</span>
+                                    </div>
+                                </Link>
+                                <Link className='card' to='/search?query=Operating Systems & Servers'> 
+                                    
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-solid fa-server"></i>
+                                        </span>
+                                        <span className='text'>Operating Systems & Servers</span>
+                                    </div>
+                                </Link>
+                                <Link className='card' to='/search?query=Graphic Design & illustration'>
+                                    
 
-                            <div className = 'wrap'>
-                                <span className='icon'>
-                                    <i class="fa-solid fa-compass-drafting"></i>
-                                </span>
-                                <span className='text'>Graphic Design & illustration</span>
-                            </div>
-                        </Link>
+                                    <div className = 'wrap'>
+                                        <span className='icon'>
+                                            <i class="fa-solid fa-compass-drafting"></i>
+                                        </span>
+                                        <span className='text'>Graphic Design & illustration</span>
+                                    </div>
+                                </Link>
+                            </>
+                        )}
+                        <div className='card' onClick={toggleCards}>
+                           
+                           <div className = 'wrap'>
+                               <span className='icon'>
+                                   {cardOpen ? (
+                                    <i class="fa-solid fa-minus"></i>
+                                   ):(
+                                    <i class="fa-solid fa-plus"></i>
+                                   )}
+                               </span>
+                               <span className='text'>{cardOpen ? "view less" :'more'}</span>
+                           </div>
+                       </div>
+                        
+                       
                         
                     </div>
                 </div>

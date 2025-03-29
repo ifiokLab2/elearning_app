@@ -5,7 +5,8 @@ import axios from 'axios';
 import Header from '../components/header';
 import 'swiper/swiper-bundle.css';
 import '../styles/signup.css';
-
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 import { useDispatch} from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
 import apiUrl from '../components/api-url';
@@ -26,6 +27,11 @@ const InstructorSignup = ()=>{
     const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate();
+    const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+
+    const handleSnackbarClose = () => {
+        setSnackbar({ open: false, message: "", severity: "" });
+    };
 
      const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -60,7 +66,11 @@ const InstructorSignup = ()=>{
 
             if (response.data.success) {
                 dispatch(setUser(response.data.user));
-
+                setSnackbar({
+                    open: true,
+                    message: "success!",
+                    severity: "success",
+                });
                 // Redirect to the home page
                 setTimeout(() => {
                     navigate('/instructor/');// Change '/' to the actual path of your home page
@@ -151,6 +161,21 @@ const InstructorSignup = ()=>{
                     <Link to='/login/' className='link-wrapper'>Login as an Instructor</Link>
                 </form>
             </div>
+
+             <Snackbar
+                open={snackbar.open}
+                autoHideDuration={6000}
+                onClose={handleSnackbarClose}
+            >
+                <MuiAlert
+                elevation={6}
+                variant="filled"
+                onClose={handleSnackbarClose}
+                severity={snackbar.severity}
+                >
+                {snackbar.message}
+                </MuiAlert>
+            </Snackbar>
         </div>
     );
 };

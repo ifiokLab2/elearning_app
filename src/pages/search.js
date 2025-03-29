@@ -97,7 +97,7 @@ const Search = ()=>{
         <div className='search-wrapper'>
             <div className='course-wrapper'>
                     <div className='popular'>
-                        <h2>"{term}"</h2>
+                        <h2>{term}</h2>
                     </div>
                 
                         <div className='course-container'>

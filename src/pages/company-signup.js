@@ -10,7 +10,8 @@ import Footer from '../components/footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setLoading } from '../actions/user-action'; // Import setUser and setLoading actions
 import apiUrl from '../components/api-url';
-
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 
 
@@ -26,6 +27,11 @@ const CompanySignup = ()=>{
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+
+    const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+    const handleSnackbarClose = () => {
+        setSnackbar({ open: false, message: "", severity: "" });
+    };
 
     const navigate = useNavigate();
 
@@ -62,6 +68,11 @@ const CompanySignup = ()=>{
 
             if (response.data.success) {
                 dispatch(setUser(response.data.user));
+                setSnackbar({
+                    open: true,
+                    message: "success!",
+                    severity: "success",
+                });
 
                 // Redirect to the home page
                 setTimeout(() => {
@@ -156,6 +167,21 @@ const CompanySignup = ()=>{
             </div>
         </div>
         <Footer />      
+
+            <Snackbar
+                open={snackbar.open}
+                autoHideDuration={6000}
+                onClose={handleSnackbarClose}
+            >
+                <MuiAlert
+                elevation={6}
+                variant="filled"
+                onClose={handleSnackbarClose}
+                severity={snackbar.severity}
+                >
+                {snackbar.message}
+                </MuiAlert>
+            </Snackbar>
        </>
     );
 };

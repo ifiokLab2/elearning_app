@@ -10,7 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import apiUrl from '../components/api-url';
-
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 const CreateOrganizationProfile = ()=>{
     const [name, setName] = useState('');
@@ -27,7 +28,10 @@ const CreateOrganizationProfile = ()=>{
     const [isLoading, setIsLoading] = useState(false);
     const User = useSelector(state => state.user.user);
 
-    
+    const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "" });
+    const handleSnackbarClose = () => {
+        setSnackbar({ open: false, message: "", severity: "" });
+    };
     
    
    
@@ -57,6 +61,11 @@ const CreateOrganizationProfile = ()=>{
             });
     
             if (response.data.success) {
+                setSnackbar({
+                    open: true,
+                    message: "success!",
+                    severity: "success",
+                });
                 setTimeout(() => {
                     setIsLoading(isLoading);
                     navigate('/organization/dashboard/');
@@ -65,13 +74,24 @@ const CreateOrganizationProfile = ()=>{
                 
                 // Redirect to the home page or do any other actions
             } else {
-                console.error('failed:');
+                setSnackbar({
+                    open: true,
+                    message: "Something went wrong!",
+                    severity: "error",
+                });
+                //console.error('failed:');
                 // Handle failed course creation, e.g., show error messages to the user
             }
         } catch (error) {
-            console.error('An error occurred:', error);
+            //console.error('An error occurred:', error);
             setTimeout(() => {
+
                 setIsLoading(isLoading);
+                setSnackbar({
+                    open: true,
+                    message: "Something went wrong!",
+                    severity: "error",
+                });
                
             }, 2000);
             // Handle unexpected errors
@@ -270,6 +290,20 @@ const CreateOrganizationProfile = ()=>{
                 </div>
             </form>
             </div>
+            <Snackbar
+                open={snackbar.open}
+                autoHideDuration={6000}
+                onClose={handleSnackbarClose}
+            >
+                <MuiAlert
+                elevation={6}
+                variant="filled"
+                onClose={handleSnackbarClose}
+                severity={snackbar.severity}
+                >
+                {snackbar.message}
+                </MuiAlert>
+            </Snackbar>
         </div>
     );
 };
