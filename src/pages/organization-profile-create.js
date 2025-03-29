@@ -70,7 +70,7 @@ const CreateOrganizationProfile = ()=>{
                     setIsLoading(isLoading);
                     navigate('/organization/dashboard/');
                    
-                }, 2000);
+                }, 3000);
                 
                 // Redirect to the home page or do any other actions
             } else {

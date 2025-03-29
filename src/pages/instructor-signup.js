@@ -49,7 +49,7 @@ const InstructorSignup = ()=>{
                 setIsLoading(isLoading);
                 setErrorMessage('Please make sure your passwords match.');
                
-            }, 2000); // 2000 milliseconds (2 seconds) delay
+            }, 3000); // 2000 milliseconds (2 seconds) delay
             return; // Don't proceed with the API call if passwords don't match
         }
 

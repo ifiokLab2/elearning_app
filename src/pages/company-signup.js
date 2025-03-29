@@ -77,7 +77,7 @@ const CompanySignup = ()=>{
                 // Redirect to the home page
                 setTimeout(() => {
                     navigate('/organization/profile/create/'); // Change '/' to the actual path of your home page
-                }, 2000); // 2000 milliseconds (2 seconds) delay
+                }, 3000); // 2000 milliseconds (2 seconds) delay
             } else {
                 console.error('Signup failed:',response.data.errors);
                
