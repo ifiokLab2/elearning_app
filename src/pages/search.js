@@ -8,6 +8,8 @@ import { useSelector } from 'react-redux';
 import apiUrl from '../components/api-url';
 import 'swiper/swiper-bundle.css';
 import '../styles/home.css';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import { useNavigate,useLocation } from 'react-router-dom';
 
@@ -16,7 +18,9 @@ const Search = ()=>{
     const user = useSelector((state) => state.user.user);
     const location = useLocation();
     const [results, setResults] = useState([]);
+    const [related, setRelated] = useState([]);
     const [term, setTerm] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
   
    
     const [cart, setCart] = useState([]);
@@ -70,9 +74,12 @@ const Search = ()=>{
     };
 
     const fetchSearchResults = async (query) => {
+        setIsLoading(true);
         try {
             const response = await axios.get(`${apiUrl}/api/search-courses/?query=${query}`);
             setResults(response.data.all_courses);
+            setRelated(response.data.related_data)
+            setIsLoading(false);
         } catch (error) {
             console.error('Error fetching search results:', error);
         }
@@ -101,7 +108,57 @@ const Search = ()=>{
                     </div>
                 
                         <div className='course-container'>
-                            {results.length > 0 ? (
+                            {isLoading ? (
+                                <Skeleton count={5} height={30} style={{ marginBottom: '10px' }} />
+                            ):(
+                                <>
+                                    {results.length > 0 ? (
+                                    <>
+                                        {results.map((course) => (
+                                            <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
+                                                <img src ={course.thumbnail} alt='image' />
+
+                                            
+                                                <div className={`heart-button ${isInCart(course.id) ? 'red-heart' : ''}`}>
+                                                    {/* fa-regular fa-heart Add onClick handler to trigger adding the course to the cart */}
+                                                    <i className={`${isInCart(course.id) ? 'fa-solid' : 'fa-regular' } fa-heart` } onClick={(e) => handleAddToCart(e,course.id)}></i>
+                                                </div>
+                                                <div className='card-details'>
+                                                    <h2>{course.title}</h2>
+                                                    <div className='author-name'>{course.instructor}</div>
+                                                    <div className='ratings-card'>
+                                                        <span className='num box'>4.5</span>
+                                                        <span className='stars box'>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star"></i>
+                                                            <i class="fa-solid fa-star-half"></i>
+                                                        </span>
+                                                        <span className='students box'>
+                                                            
+                                                        </span>
+                                                    </div>
+                                                    <div className='price-card'>
+                                                    <span className='price'>${course.price}</span>
+                                                    <span className='discount'>${course.discountPrice}</span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </>
+                                ):(
+                                <h3>No close amtch.</h3> 
+                                )}
+                                    </>
+                                )}
+                            
+                            
+                            
+                        </div>
+                        {/*related courses */}
+                        <div className='course-container'>
+                            {related.length > 0 && (
                                 <>
                                     {results.map((course) => (
                                         <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
@@ -136,8 +193,6 @@ const Search = ()=>{
                                         </Link>
                                     ))}
                                 </>
-                            ):(
-                               <h3>No data found.</h3> 
                             )}
                             
                             

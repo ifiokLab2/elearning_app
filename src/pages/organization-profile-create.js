@@ -250,6 +250,7 @@ const CreateOrganizationProfile = ()=>{
                     name="company_industry"
                     value={company_industry}
                     onChange={(e)=>setCompanyIndustry(e.target.value)}
+                    required
                 >
                     <option value="">Select Industry</option>
                     <option value="Technology">Technology</option>
@@ -265,7 +266,7 @@ const CreateOrganizationProfile = ()=>{
                     <label htmlFor="website">Website</label>
                 </div>
                 <div className={`form-group ${phone ? 'active' : ''}`}>
-                    <input type="text" id="phone" value={phone} onChange = {handlePhoneChange} z />
+                    <input required type="text" id="phone" value={phone} onChange = {handlePhoneChange} z />
                     <label htmlFor="title">phone</label>
                 </div>
               
@@ -276,7 +277,7 @@ const CreateOrganizationProfile = ()=>{
                     id="profilePicture"
                     name="profilePicture"
                     onChange={handleFileChange}
-                    
+                    required
                     />
                 </div>
                
