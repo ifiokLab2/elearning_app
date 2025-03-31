@@ -20,7 +20,7 @@ const Search = ()=>{
     const [results, setResults] = useState([]);
     const [related, setRelated] = useState([]);
     const [term, setTerm] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
   
    
     const [cart, setCart] = useState([]);
@@ -105,8 +105,22 @@ const Search = ()=>{
             <div className='course-wrapper'>
                     <div className='popular'>
                         <h2>{term}</h2>
+                        {isLoading === false ? (
+                              <>
+                              {results.length === 0 && (
+                        <>
+                          <h3>No close match.</h3> 
+                          <h3>Related Courses.</h3> 
+                        </>
+                      )}
+                          </>
+                        ):(
+                          ""
+                        )}
+                       
+                       
                     </div>
-                
+                    
                         <div className='course-container'>
                             {isLoading ? (
                                 <Skeleton count={5} height={30} style={{ marginBottom: '10px' }} />
@@ -148,7 +162,7 @@ const Search = ()=>{
                                         ))}
                                     </>
                                 ):(
-                                <h3>No close amtch.</h3> 
+                                    ""
                                 )}
                                     </>
                                 )}
@@ -157,10 +171,12 @@ const Search = ()=>{
                             
                         </div>
                         {/*related courses */}
+                        
+                       
                         <div className='course-container'>
-                            {related.length > 0 && (
+                            {results.length === 0 && (
                                 <>
-                                    {results.map((course) => (
+                                    {related.map((course) => (
                                         <Link key={course.id} to={`/course-detail/${course.id}/${course.title}/`} className='card'>
                                             <img src ={course.thumbnail} alt='image' />
 

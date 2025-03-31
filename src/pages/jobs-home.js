@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState,useCallback , useEffect } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide, } from 'swiper/react';
@@ -14,45 +14,69 @@ import hero1 from '../styles/hero1.jpg';
 import { useNavigate } from 'react-router-dom';
 import JobHeader from '../components/job-header';
 
-const JobsHome = ()=>{
+
+
+
+const JobsHome = () => {
     const [openModalId, setOpenModalId] = useState(null);
-    const [jobs,setJobs] = useState([]);
-    const [loading,setLoading] = useState(false);
+    const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [savingJobId, setSavingJobId] = useState(null);
+    const [savedJobs, setSavedJobs] = useState(new Set()); // Track saved jobs
     const [searchQuery, setSearchQuery] = useState("");
-    const [locationQuery, setLocationQuery] = useState(""); 
+    const [locationQuery, setLocationQuery] = useState("");
+
     const user = useSelector((state) => state.user.user);
     const location = useLocation();
 
-
-    const handleEllipsisClick = (event,jobId) => {
+    const handleEllipsisClick = (event, jobId) => {
         event.preventDefault();
-        if (openModalId === jobId) {
-        setOpenModalId(null);  // Close the modal if it's already open
-        } else {
-        setOpenModalId(jobId); // Open the modal for the clicked job
-        }
+        setOpenModalId(openModalId === jobId ? null : jobId);
     };
 
-    const saveJob = async (jobId) => {
-        setSavingJobId(jobId); // Set the job being saved
+    const fetchSavedJobs = async () => {
+        if (!user) return;
         try {
-            await axios.post(`${apiUrl}/jobs/${jobId}/save/`, null, {
+            const response = await axios.get(`${apiUrl}/jobs/saved/`, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'Authorization': `Token ${user?.auth_token}`, // Include the user ID in the Authorization header
+                    Authorization: `Token ${user.auth_token}`,
                 },
             });
-           
-            setOpenModalId(null);
+            setSavedJobs(new Set(response.data.saved_job_ids)); // Store saved job IDs
         } catch (error) {
-            console.error('Error saving job:', error);
-           // alert('Failed to save job. Please try again.');
-        } finally {
-            setSavingJobId(null); // Reset saving state
+            console.error("Error fetching saved jobs:", error);
         }
     };
-    const fetchJobs = async (search = "", location = "") => {
+
+    const toggleSaveJob = async (jobId) => {
+        setSavingJobId(jobId);
+        const isSaved = savedJobs.has(jobId);
+
+        try {
+            if (isSaved) {
+                await axios.delete(`${apiUrl}/jobs/${jobId}/unsave/`, {
+                    headers: { Authorization: `Token ${user?.auth_token}` },
+                });
+                setSavedJobs((prev) => {
+                    const updated = new Set(prev);
+                    updated.delete(jobId);
+                    return updated;
+                });
+            } else {
+                await axios.post(`${apiUrl}/jobs/${jobId}/save/`, null, {
+                    headers: { Authorization: `Token ${user?.auth_token}` },
+                });
+                setSavedJobs((prev) => new Set(prev).add(jobId));
+            }
+            setOpenModalId(null);
+        } catch (error) {
+            console.error("Error toggling job save:", error);
+        } finally {
+            setSavingJobId(null);
+        }
+    };
+
+    const fetchJobs = useCallback(async (search = "", location = "") => {
         setLoading(true);
         try {
             const response = await axios.get(`${apiUrl}/job/list/`, {
@@ -65,110 +89,57 @@ const JobsHome = ()=>{
         } finally {
             setLoading(false);
         }
-    };
-    const handleSearch = () => {
-        const params = new URLSearchParams();
-        if (searchQuery) params.set('search', searchQuery);
-        if (locationQuery) params.set('location', locationQuery);
-        window.history.pushState({}, '', `/jobs?${params.toString()}`);
-        fetchJobs(searchQuery, locationQuery);
-    };
+    }, []);
 
-    // Handle Enter Key Press
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            fetchJobs();
-        }
-    };
     useEffect(() => {
-
+        fetchSavedJobs();
         const params = new URLSearchParams(location.search);
-        setSearchQuery(params.get('search') || '');
-        setLocationQuery(params.get('location') || '');
-        fetchJobs(params.get('search') || '', params.get('location') || '');
+        fetchJobs(params.get("search") || "", params.get("location") || "");
+    }, [location.search, fetchJobs]);
 
-
-        
-
-        //fetchJobs();
-    }, [location.search]);
-    
-    return(
-       <div class = 'home-wrapper'>
-        <JobHeader />
-        <div className='jobs-body'>
-            <div className='job-search-outer'>
-                <div className='job-wrapper'>
-                    <div className='box-wrapper-a'>
-                        <i className="fa-solid fa-magnifying-glass"></i>
-                        
-                        <input
-                            placeholder="Job title, Keywords"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                        />
-                    </div>
-                    <div className='box-wrapper-b'>
-                        <i class="fa-solid fa-location-dot"></i>
-                        
-                        <input
-                            placeholder="Country, city, state, or remote"
-                            value={locationQuery}
-                            onChange={(e) => setLocationQuery(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                        />
-                    </div>
-                    <div className='box-wrapper-c'>
-                        <button className='find-btn' onClick={handleSearch}>
-                            <span>Find Jobs</span>
-                            <i className="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
+    return (
+        <div className="home-wrapper">
+            <JobHeader />
+            <div className="jobs-body">
+                <div className="job-list-wrapper">
+                    {loading ? (
+                        <p>Loading jobs...</p>
+                    ) : (
+                        jobs.map((data) => {
+                            const isSaved = savedJobs.has(data.id);
+                            return (
+                                <div key={data.id} className="job-container">
+                                    <Link to={`/job/detail/${data.id}/${data.title}/`} className="link-wrapper">
+                                        <div className="title">{data.title}</div>
+                                        <div className="company-name">{data.company}</div>
+                                        <div className="location">{data.country}</div>
+                                        <div className="job-type">{data.job_type}</div>
+                                        <div className="job-overview">{data.description}</div>
+                                        <div
+                                            className="elipsis-card"
+                                            onClick={(event) => handleEllipsisClick(event, data.id)}
+                                        >
+                                            <i className="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </Link>
+                                    {openModalId === data.id && (
+                                        <div className="elipsis-container">
+                                            <div className="tabs" onClick={() => toggleSaveJob(data.id)}>
+                                                <i className="fa-solid fa-bookmark"></i>
+                                                <div className="text">
+                                                    {savingJobId === data.id ? "Saving..." : isSaved ? "Unsave Job" : "Save Job"}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })
+                    )}
                 </div>
             </div>
-
-            <div className = 'job-list-wrapper' >
-               
-                {jobs.map((data)=>(
-                    <div key = {data.id} className = 'job-container'>
-                        <Link to = {`/job/detail/${data.id}/${data.title}/`} className='link-wrapper'>
-                            <div className='title'>
-                               {data.title}
-                            </div>
-                            <div className='company-name'>{data.company}</div>
-                            <div className='location'>{data.country}</div>
-                            <div className='job-type'>{data.job_type}</div>
-                            <div className='job-overview'>
-                               {data.description}
-                            </div>
-                            <div className='elipsis-card' onClick={(event) => handleEllipsisClick(event,data.id)}>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </div>
-                        </Link>
-                        {openModalId === data.id && (
-                            <div className={`elipsis-container`} >
-                                <div className='tabs'  onClick={() => saveJob(data.id)}>
-                                    <i class="fa-solid fa-bookmark"></i>
-                                    <div className='text'> {savingJobId === data.id ? 'Saving...' : 'Save Job'}</div>
-                                </div>
-                                {/*
-                                <div className='tabs'>
-                                    <i class="fa-solid fa-flag"></i>
-                                    <div className='text'>Report Job</div>
-                                </div>
-                                */}
-                            </div>
-                        )}
-                    </div>
-                ))}
-               
-                
-            </div>
         </div>
-        
-       </div>
-    )
+    );
 };
 
 export default JobsHome;
